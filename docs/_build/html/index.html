@@ -1,0 +1,1029 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Arrakis’s documentation! &#8212; Arrakis  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'index';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Introduction" href="README.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="#">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Arrakis  documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="README.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AttentionHeadComposition.html">Attention Head Composition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AttentionTools.html">Attention Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CausalTracingIntervention.html">Causal Tracing Intervention</a></li>
+<li class="toctree-l1"><a class="reference internal" href="KnowledgeGraphExtractor.html">Knowledge Graph Extractor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="KnowledgeProber.html">Knowledge Prober</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LogitAttribution.html">Logit Attribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LogitLens.html">LogitLens</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ModelSurgery.html">Model Surgery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ReadWriteHeads.html">Read Write Heads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ResidualDecomposer.html">Residual Decomposer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ResidualTools.html">Residual Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SparsityAnalyzer.html">Sparsity Analyzer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SuperpositionDisentangler.html">Superposition Disentangler</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/index.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Arrakis’s documentation!</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-core_arrakis.attention_head_comp">AttentionHeadComposition</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.attention_head_comp.AttentionComposer"><code class="docutils literal notranslate"><span class="pre">AttentionComposer</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.attention_head_comp.AttentionComposer.apply_composed_head"><code class="docutils literal notranslate"><span class="pre">AttentionComposer.apply_composed_head()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.attention_head_comp.AttentionComposer.attention_path_patching"><code class="docutils literal notranslate"><span class="pre">AttentionComposer.attention_path_patching()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.attention_head_comp.AttentionComposer.head_composition"><code class="docutils literal notranslate"><span class="pre">AttentionComposer.head_composition()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-core_arrakis.attention_tools">AttentionTools</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.attention_tools.AttentionTools"><code class="docutils literal notranslate"><span class="pre">AttentionTools</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.attention_tools.AttentionTools.ablate_head"><code class="docutils literal notranslate"><span class="pre">AttentionTools.ablate_head()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.attention_tools.AttentionTools.attention_patterns"><code class="docutils literal notranslate"><span class="pre">AttentionTools.attention_patterns()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.attention_tools.AttentionTools.merge_heads"><code class="docutils literal notranslate"><span class="pre">AttentionTools.merge_heads()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.attention_tools.AttentionTools.top_attended_ids"><code class="docutils literal notranslate"><span class="pre">AttentionTools.top_attended_ids()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-core_arrakis.causal_tracing_intervention">CausalTracingIntervention</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.causal_tracing_intervention.CausalTracer"><code class="docutils literal notranslate"><span class="pre">CausalTracer</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.causal_tracing_intervention.CausalTracer.intervene_on_neuron"><code class="docutils literal notranslate"><span class="pre">CausalTracer.intervene_on_neuron()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.causal_tracing_intervention.CausalTracer.trace_token_probability"><code class="docutils literal notranslate"><span class="pre">CausalTracer.trace_token_probability()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-core_arrakis.kg_extractor">KnowledgeGraphExtractor</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.kg_extractor.KnowledgeGraphExtractor"><code class="docutils literal notranslate"><span class="pre">KnowledgeGraphExtractor</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.kg_extractor.KnowledgeGraphExtractor.extract_relational_subspaces"><code class="docutils literal notranslate"><span class="pre">KnowledgeGraphExtractor.extract_relational_subspaces()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.kg_extractor.KnowledgeGraphExtractor.identify_relation_types"><code class="docutils literal notranslate"><span class="pre">KnowledgeGraphExtractor.identify_relation_types()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.kg_extractor.KnowledgeGraphExtractor.project_token_embeddings"><code class="docutils literal notranslate"><span class="pre">KnowledgeGraphExtractor.project_token_embeddings()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-core_arrakis.knowledge_prober">KnowledgeProber</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.knowledge_prober.KnowledgeProber"><code class="docutils literal notranslate"><span class="pre">KnowledgeProber</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.knowledge_prober.KnowledgeProber.knowledge_probe"><code class="docutils literal notranslate"><span class="pre">KnowledgeProber.knowledge_probe()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.knowledge_prober.KnowledgeProber.polysemantic_score"><code class="docutils literal notranslate"><span class="pre">KnowledgeProber.polysemantic_score()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-core_arrakis.logit_attribution">LogitAttribution</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.logit_attribution.LogitAttributor"><code class="docutils literal notranslate"><span class="pre">LogitAttributor</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.logit_attribution.LogitAttributor.logit_attribution"><code class="docutils literal notranslate"><span class="pre">LogitAttributor.logit_attribution()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.logit_attribution.LogitAttributor.track_token_circulation"><code class="docutils literal notranslate"><span class="pre">LogitAttributor.track_token_circulation()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-core_arrakis.logit_lens">LogitLens</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.logit_lens.LogitLens"><code class="docutils literal notranslate"><span class="pre">LogitLens</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.logit_lens.LogitLens.layer_attributions"><code class="docutils literal notranslate"><span class="pre">LogitLens.layer_attributions()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.logit_lens.LogitLens.logit_lens"><code class="docutils literal notranslate"><span class="pre">LogitLens.logit_lens()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-core_arrakis.model_surgery">ModelSurgery</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.model_surgery.ModelSurgery"><code class="docutils literal notranslate"><span class="pre">ModelSurgery</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.model_surgery.ModelSurgery.delete_layers"><code class="docutils literal notranslate"><span class="pre">ModelSurgery.delete_layers()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.model_surgery.ModelSurgery.get_model"><code class="docutils literal notranslate"><span class="pre">ModelSurgery.get_model()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.model_surgery.ModelSurgery.permute_layers"><code class="docutils literal notranslate"><span class="pre">ModelSurgery.permute_layers()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.model_surgery.ModelSurgery.replace_layers"><code class="docutils literal notranslate"><span class="pre">ModelSurgery.replace_layers()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-core_arrakis.read_write_heads">ReadWriteHeads</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.read_write_heads.WriteReadAnalyzer"><code class="docutils literal notranslate"><span class="pre">WriteReadAnalyzer</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.read_write_heads.WriteReadAnalyzer.identify_read_heads"><code class="docutils literal notranslate"><span class="pre">WriteReadAnalyzer.identify_read_heads()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.read_write_heads.WriteReadAnalyzer.identify_write_heads"><code class="docutils literal notranslate"><span class="pre">WriteReadAnalyzer.identify_write_heads()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.read_write_heads.WriteReadAnalyzer.trace_information_flow"><code class="docutils literal notranslate"><span class="pre">WriteReadAnalyzer.trace_information_flow()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-core_arrakis.residual_decomposer">ResidualDecomposer</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.residual_decomposer.ResidualDecomposer"><code class="docutils literal notranslate"><span class="pre">ResidualDecomposer</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.residual_decomposer.ResidualDecomposer.decompose_residual"><code class="docutils literal notranslate"><span class="pre">ResidualDecomposer.decompose_residual()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.residual_decomposer.ResidualDecomposer.mlp_basis"><code class="docutils literal notranslate"><span class="pre">ResidualDecomposer.mlp_basis()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-core_arrakis.residual_tools">ResidualTools</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.residual_tools.ResidualTools"><code class="docutils literal notranslate"><span class="pre">ResidualTools</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.residual_tools.ResidualTools.feature_attribution"><code class="docutils literal notranslate"><span class="pre">ResidualTools.feature_attribution()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.residual_tools.ResidualTools.residual_decomposition"><code class="docutils literal notranslate"><span class="pre">ResidualTools.residual_decomposition()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.residual_tools.ResidualTools.residual_movement"><code class="docutils literal notranslate"><span class="pre">ResidualTools.residual_movement()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-core_arrakis.sparsity_analyzer">SparsityAnalyzer</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.sparsity_analyzer.SparsityAnalyzer"><code class="docutils literal notranslate"><span class="pre">SparsityAnalyzer</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.sparsity_analyzer.SparsityAnalyzer.compute_activation_sparsity"><code class="docutils literal notranslate"><span class="pre">SparsityAnalyzer.compute_activation_sparsity()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.sparsity_analyzer.SparsityAnalyzer.find_polysemantic_neurons"><code class="docutils literal notranslate"><span class="pre">SparsityAnalyzer.find_polysemantic_neurons()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.sparsity_analyzer.SparsityAnalyzer.prune_network"><code class="docutils literal notranslate"><span class="pre">SparsityAnalyzer.prune_network()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-core_arrakis.superposition_disentangler">SuperpositionDisentangler</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.superposition_disentangler.SuperpositionDisentangler"><code class="docutils literal notranslate"><span class="pre">SuperpositionDisentangler</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.superposition_disentangler.SuperpositionDisentangler.compute_activation_covariance"><code class="docutils literal notranslate"><span class="pre">SuperpositionDisentangler.compute_activation_covariance()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.superposition_disentangler.SuperpositionDisentangler.disentangle_superposition"><code class="docutils literal notranslate"><span class="pre">SuperpositionDisentangler.disentangle_superposition()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.superposition_disentangler.SuperpositionDisentangler.interpolate_concepts"><code class="docutils literal notranslate"><span class="pre">SuperpositionDisentangler.interpolate_concepts()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.superposition_disentangler.SuperpositionDisentangler.project_activations"><code class="docutils literal notranslate"><span class="pre">SuperpositionDisentangler.project_activations()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.superposition_disentangler.SuperpositionDisentangler.reconstruct_activations"><code class="docutils literal notranslate"><span class="pre">SuperpositionDisentangler.reconstruct_activations()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="arrakis-s-documentation">
+<h1>Arrakis’s documentation!<a class="headerlink" href="#arrakis-s-documentation" title="Link to this heading">#</a></h1>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="README.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AttentionHeadComposition.html">Attention Head Composition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AttentionTools.html">Attention Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CausalTracingIntervention.html">Causal Tracing Intervention</a></li>
+<li class="toctree-l1"><a class="reference internal" href="KnowledgeGraphExtractor.html">Knowledge Graph Extractor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="KnowledgeProber.html">Knowledge Prober</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LogitAttribution.html">Logit Attribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LogitLens.html">LogitLens</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ModelSurgery.html">Model Surgery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ReadWriteHeads.html">Read Write Heads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ResidualDecomposer.html">Residual Decomposer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ResidualTools.html">Residual Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SparsityAnalyzer.html">Sparsity Analyzer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SuperpositionDisentangler.html">Superposition Disentangler</a></li>
+</ul>
+</div>
+<section id="module-core_arrakis.attention_head_comp">
+<span id="attentionheadcomposition"></span><h2>AttentionHeadComposition<a class="headerlink" href="#module-core_arrakis.attention_head_comp" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="core_arrakis.attention_head_comp.AttentionComposer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">core_arrakis.attention_head_comp.</span></span><span class="sig-name descname"><span class="pre">AttentionComposer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core_arrakis.attention_head_comp.AttentionComposer" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">BaseInterpretabilityTool</span></code></p>
+<p>Class to interpret attention heads.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="core_arrakis.attention_head_comp.AttentionComposer.apply_composed_head">
+<span class="sig-name descname"><span class="pre">apply_composed_head</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_ids</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Q</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">K</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">V</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">O</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core_arrakis.attention_head_comp.AttentionComposer.apply_composed_head" title="Link to this definition">#</a></dt>
+<dd><p>Applies the composed head to the input.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="core_arrakis.attention_head_comp.AttentionComposer.attention_path_patching">
+<span class="sig-name descname"><span class="pre">attention_path_patching</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_ids</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">src_head</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dest_head</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core_arrakis.attention_head_comp.AttentionComposer.attention_path_patching" title="Link to this definition">#</a></dt>
+<dd><p>Patches the attention path from a source head to a destination head.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="core_arrakis.attention_head_comp.AttentionComposer.head_composition">
+<span class="sig-name descname"><span class="pre">head_composition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">head1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">head2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core_arrakis.attention_head_comp.AttentionComposer.head_composition" title="Link to this definition">#</a></dt>
+<dd><p>Composes two heads.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-core_arrakis.attention_tools">
+<span id="attentiontools"></span><h2>AttentionTools<a class="headerlink" href="#module-core_arrakis.attention_tools" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="core_arrakis.attention_tools.AttentionTools">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">core_arrakis.attention_tools.</span></span><span class="sig-name descname"><span class="pre">AttentionTools</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core_arrakis.attention_tools.AttentionTools" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">BaseInterpretabilityTool</span></code></p>
+<p>Understanding attention patterns by analyzing, visualizing and manipulating it.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="core_arrakis.attention_tools.AttentionTools.ablate_head">
+<span class="sig-name descname"><span class="pre">ablate_head</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">layer_idx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">head_idx</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core_arrakis.attention_tools.AttentionTools.ablate_head" title="Link to this definition">#</a></dt>
+<dd><p>Ablate a specific head in a specific layer of a model.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="core_arrakis.attention_tools.AttentionTools.attention_patterns">
+<span class="sig-name descname"><span class="pre">attention_patterns</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_ids</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layer_idx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">head_idx</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core_arrakis.attention_tools.AttentionTools.attention_patterns" title="Link to this definition">#</a></dt>
+<dd><p>Extract the attention patterns of a specific head in a specific layer of a model.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="core_arrakis.attention_tools.AttentionTools.merge_heads">
+<span class="sig-name descname"><span class="pre">merge_heads</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">layer_idx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">head_idx1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">head_idx2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core_arrakis.attention_tools.AttentionTools.merge_heads" title="Link to this definition">#</a></dt>
+<dd><p>Merge two heads in a specific layer of a model. This is really helpful in understanding redundancy in attention heads.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="core_arrakis.attention_tools.AttentionTools.top_attended_ids">
+<span class="sig-name descname"><span class="pre">top_attended_ids</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_ids</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layer_idx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">head_idx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_tokens</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core_arrakis.attention_tools.AttentionTools.top_attended_ids" title="Link to this definition">#</a></dt>
+<dd><p>Extract the top-k attended ids of a specific head in a specific layer of a model.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-core_arrakis.causal_tracing_intervention">
+<span id="causaltracingintervention"></span><h2>CausalTracingIntervention<a class="headerlink" href="#module-core_arrakis.causal_tracing_intervention" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="core_arrakis.causal_tracing_intervention.CausalTracer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">core_arrakis.causal_tracing_intervention.</span></span><span class="sig-name descname"><span class="pre">CausalTracer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core_arrakis.causal_tracing_intervention.CausalTracer" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">BaseInterpretabilityTool</span></code></p>
+<p>locating and Editing Factored Cognition.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="core_arrakis.causal_tracing_intervention.CausalTracer.intervene_on_neuron">
+<span class="sig-name descname"><span class="pre">intervene_on_neuron</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_ids</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layer_idx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">neuron_idx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core_arrakis.causal_tracing_intervention.CausalTracer.intervene_on_neuron" title="Link to this definition">#</a></dt>
+<dd><p>Intervenes on a neuron in the model.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="core_arrakis.causal_tracing_intervention.CausalTracer.trace_token_probability">
+<span class="sig-name descname"><span class="pre">trace_token_probability</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_ids</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_idx</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core_arrakis.causal_tracing_intervention.CausalTracer.trace_token_probability" title="Link to this definition">#</a></dt>
+<dd><p>Traces the probability of the target token through the layers.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-core_arrakis.kg_extractor">
+<span id="knowledgegraphextractor"></span><h2>KnowledgeGraphExtractor<a class="headerlink" href="#module-core_arrakis.kg_extractor" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="core_arrakis.kg_extractor.KnowledgeGraphExtractor">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">core_arrakis.kg_extractor.</span></span><span class="sig-name descname"><span class="pre">KnowledgeGraphExtractor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core_arrakis.kg_extractor.KnowledgeGraphExtractor" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">BaseInterpretabilityTool</span></code></p>
+<p>Extracting relational subspaces from Q-K interaction,Projecting token embeddings onto these subspaces, Indentifying types of relations</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="core_arrakis.kg_extractor.KnowledgeGraphExtractor.extract_relational_subspaces">
+<span class="sig-name descname"><span class="pre">extract_relational_subspaces</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">layer_idx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">top_k</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core_arrakis.kg_extractor.KnowledgeGraphExtractor.extract_relational_subspaces" title="Link to this definition">#</a></dt>
+<dd><p>Extracts the top-k relational subspaces from the Q-K interaction matrix of the layer.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="core_arrakis.kg_extractor.KnowledgeGraphExtractor.identify_relation_types">
+<span class="sig-name descname"><span class="pre">identify_relation_types</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">token_ids</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subspaces</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core_arrakis.kg_extractor.KnowledgeGraphExtractor.identify_relation_types" title="Link to this definition">#</a></dt>
+<dd><p>Identifies the types of relations based on the projected embeddings.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="core_arrakis.kg_extractor.KnowledgeGraphExtractor.project_token_embeddings">
+<span class="sig-name descname"><span class="pre">project_token_embeddings</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">token_ids</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subspaces</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core_arrakis.kg_extractor.KnowledgeGraphExtractor.project_token_embeddings" title="Link to this definition">#</a></dt>
+<dd><p>Projects the token embeddings onto the given subspaces.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-core_arrakis.knowledge_prober">
+<span id="knowledgeprober"></span><h2>KnowledgeProber<a class="headerlink" href="#module-core_arrakis.knowledge_prober" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="core_arrakis.knowledge_prober.KnowledgeProber">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">core_arrakis.knowledge_prober.</span></span><span class="sig-name descname"><span class="pre">KnowledgeProber</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core_arrakis.knowledge_prober.KnowledgeProber" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">BaseInterpretabilityTool</span></code></p>
+<p>Probes the model for knowledge.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="core_arrakis.knowledge_prober.KnowledgeProber.knowledge_probe">
+<span class="sig-name descname"><span class="pre">knowledge_probe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ids</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">concept_neuron</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core_arrakis.knowledge_prober.KnowledgeProber.knowledge_probe" title="Link to this definition">#</a></dt>
+<dd><p>Probes the model for knowledge.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="core_arrakis.knowledge_prober.KnowledgeProber.polysemantic_score">
+<span class="sig-name descname"><span class="pre">polysemantic_score</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">layer_idx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k_neighbors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core_arrakis.knowledge_prober.KnowledgeProber.polysemantic_score" title="Link to this definition">#</a></dt>
+<dd><p>Computes the polysemantic score of the neurons in the layer.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-core_arrakis.logit_attribution">
+<span id="logitattribution"></span><h2>LogitAttribution<a class="headerlink" href="#module-core_arrakis.logit_attribution" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="core_arrakis.logit_attribution.LogitAttributor">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">core_arrakis.logit_attribution.</span></span><span class="sig-name descname"><span class="pre">LogitAttributor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core_arrakis.logit_attribution.LogitAttributor" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">BaseInterpretabilityTool</span></code></p>
+<p>Attribution of the logit to the input tokens.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="core_arrakis.logit_attribution.LogitAttributor.logit_attribution">
+<span class="sig-name descname"><span class="pre">logit_attribution</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_ids</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_idx</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core_arrakis.logit_attribution.LogitAttributor.logit_attribution" title="Link to this definition">#</a></dt>
+<dd><p>Computes the attribution of the target logit to the input tokens. Returns the attributions.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="core_arrakis.logit_attribution.LogitAttributor.track_token_circulation">
+<span class="sig-name descname"><span class="pre">track_token_circulation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_ids</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_idx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_layers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core_arrakis.logit_attribution.LogitAttributor.track_token_circulation" title="Link to this definition">#</a></dt>
+<dd><p>Tracks the token circulation through the layers. Returns the direct moves and the total moves.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-core_arrakis.logit_lens">
+<span id="logitlens"></span><h2>LogitLens<a class="headerlink" href="#module-core_arrakis.logit_lens" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="core_arrakis.logit_lens.LogitLens">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">core_arrakis.logit_lens.</span></span><span class="sig-name descname"><span class="pre">LogitLens</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core_arrakis.logit_lens.LogitLens" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">BaseInterpretabilityTool</span></code></p>
+<p>Analyzes the logit lens of the model.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="core_arrakis.logit_lens.LogitLens.layer_attributions">
+<span class="sig-name descname"><span class="pre">layer_attributions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_ids</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_idx</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core_arrakis.logit_lens.LogitLens.layer_attributions" title="Link to this definition">#</a></dt>
+<dd><p>Computes the attributions of the layers.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="core_arrakis.logit_lens.LogitLens.logit_lens">
+<span class="sig-name descname"><span class="pre">logit_lens</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_ids</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_idx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layer_idx</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core_arrakis.logit_lens.LogitLens.logit_lens" title="Link to this definition">#</a></dt>
+<dd><p>Computes the logit lens of the model.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-core_arrakis.model_surgery">
+<span id="modelsurgery"></span><h2>ModelSurgery<a class="headerlink" href="#module-core_arrakis.model_surgery" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="core_arrakis.model_surgery.ModelSurgery">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">core_arrakis.model_surgery.</span></span><span class="sig-name descname"><span class="pre">ModelSurgery</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core_arrakis.model_surgery.ModelSurgery" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">BaseInterpretabilityTool</span></code></p>
+<p>Performs surgery on the model. Replaces, deletes, or permutes layers(in context).</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="core_arrakis.model_surgery.ModelSurgery.delete_layers">
+<span class="sig-name descname"><span class="pre">delete_layers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">indices</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core_arrakis.model_surgery.ModelSurgery.delete_layers" title="Link to this definition">#</a></dt>
+<dd><p>Deletes the specified layers(in context).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="core_arrakis.model_surgery.ModelSurgery.get_model">
+<span class="sig-name descname"><span class="pre">get_model</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#core_arrakis.model_surgery.ModelSurgery.get_model" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="core_arrakis.model_surgery.ModelSurgery.permute_layers">
+<span class="sig-name descname"><span class="pre">permute_layers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">indices</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core_arrakis.model_surgery.ModelSurgery.permute_layers" title="Link to this definition">#</a></dt>
+<dd><p>Permutes the layers based on the given indices(in context).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="core_arrakis.model_surgery.ModelSurgery.replace_layers">
+<span class="sig-name descname"><span class="pre">replace_layers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">indices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">replacements</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core_arrakis.model_surgery.ModelSurgery.replace_layers" title="Link to this definition">#</a></dt>
+<dd><p>Replaces the specified layers with the given replacements(in context).</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-core_arrakis.read_write_heads">
+<span id="readwriteheads"></span><h2>ReadWriteHeads<a class="headerlink" href="#module-core_arrakis.read_write_heads" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="core_arrakis.read_write_heads.WriteReadAnalyzer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">core_arrakis.read_write_heads.</span></span><span class="sig-name descname"><span class="pre">WriteReadAnalyzer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core_arrakis.read_write_heads.WriteReadAnalyzer" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">BaseInterpretabilityTool</span></code></p>
+<p>Analyzes the read and write heads of the model.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="core_arrakis.read_write_heads.WriteReadAnalyzer.identify_read_heads">
+<span class="sig-name descname"><span class="pre">identify_read_heads</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">layer_idx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dim_idx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.8</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core_arrakis.read_write_heads.WriteReadAnalyzer.identify_read_heads" title="Link to this definition">#</a></dt>
+<dd><p>Identifies the read heads of the layer. Returns the indices of the heads.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="core_arrakis.read_write_heads.WriteReadAnalyzer.identify_write_heads">
+<span class="sig-name descname"><span class="pre">identify_write_heads</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">layer_idx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.8</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core_arrakis.read_write_heads.WriteReadAnalyzer.identify_write_heads" title="Link to this definition">#</a></dt>
+<dd><p>Identifies the write heads of the layer. Returns the indices of the heads.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="core_arrakis.read_write_heads.WriteReadAnalyzer.trace_information_flow">
+<span class="sig-name descname"><span class="pre">trace_information_flow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_ids</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">src_token</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dst_token</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_layers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core_arrakis.read_write_heads.WriteReadAnalyzer.trace_information_flow" title="Link to this definition">#</a></dt>
+<dd><p>Traces the information flow from the source token to the destination token. Returns the flow at each layer.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-core_arrakis.residual_decomposer">
+<span id="residualdecomposer"></span><h2>ResidualDecomposer<a class="headerlink" href="#module-core_arrakis.residual_decomposer" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="core_arrakis.residual_decomposer.ResidualDecomposer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">core_arrakis.residual_decomposer.</span></span><span class="sig-name descname"><span class="pre">ResidualDecomposer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core_arrakis.residual_decomposer.ResidualDecomposer" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">BaseInterpretabilityTool</span></code></p>
+<p>Decomposes the residual stream into interpretable components from MLP and attention.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="core_arrakis.residual_decomposer.ResidualDecomposer.decompose_residual">
+<span class="sig-name descname"><span class="pre">decompose_residual</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_ids</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layer_idx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">top_k</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core_arrakis.residual_decomposer.ResidualDecomposer.decompose_residual" title="Link to this definition">#</a></dt>
+<dd><p>Decomposes the residual stream into interpretable components from MLP and attention.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="core_arrakis.residual_decomposer.ResidualDecomposer.mlp_basis">
+<span class="sig-name descname"><span class="pre">mlp_basis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">layer_idx</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core_arrakis.residual_decomposer.ResidualDecomposer.mlp_basis" title="Link to this definition">#</a></dt>
+<dd><p>Computes the basis of the MLP layer.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-core_arrakis.residual_tools">
+<span id="residualtools"></span><h2>ResidualTools<a class="headerlink" href="#module-core_arrakis.residual_tools" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="core_arrakis.residual_tools.ResidualTools">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">core_arrakis.residual_tools.</span></span><span class="sig-name descname"><span class="pre">ResidualTools</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core_arrakis.residual_tools.ResidualTools" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">BaseInterpretabilityTool</span></code></p>
+<p>The residual stream in transformers carries information throughout the network.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="core_arrakis.residual_tools.ResidualTools.feature_attribution">
+<span class="sig-name descname"><span class="pre">feature_attribution</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_ids</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_ids</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core_arrakis.residual_tools.ResidualTools.feature_attribution" title="Link to this definition">#</a></dt>
+<dd><p>Attribute the final prediction back through the residual stream.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="core_arrakis.residual_tools.ResidualTools.residual_decomposition">
+<span class="sig-name descname"><span class="pre">residual_decomposition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_ids</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layer_idx</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core_arrakis.residual_tools.ResidualTools.residual_decomposition" title="Link to this definition">#</a></dt>
+<dd><p>Break down the residual stream to see where info comes from.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="core_arrakis.residual_tools.ResidualTools.residual_movement">
+<span class="sig-name descname"><span class="pre">residual_movement</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_ids</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layer_idx1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layer_idx2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core_arrakis.residual_tools.ResidualTools.residual_movement" title="Link to this definition">#</a></dt>
+<dd><p>Measure how much the residual stream changes between layers.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-core_arrakis.sparsity_analyzer">
+<span id="sparsityanalyzer"></span><h2>SparsityAnalyzer<a class="headerlink" href="#module-core_arrakis.sparsity_analyzer" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="core_arrakis.sparsity_analyzer.SparsityAnalyzer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">core_arrakis.sparsity_analyzer.</span></span><span class="sig-name descname"><span class="pre">SparsityAnalyzer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core_arrakis.sparsity_analyzer.SparsityAnalyzer" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">BaseInterpretabilityTool</span></code></p>
+<p>Analyzes the sparsity of the network.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="core_arrakis.sparsity_analyzer.SparsityAnalyzer.compute_activation_sparsity">
+<span class="sig-name descname"><span class="pre">compute_activation_sparsity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layer</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core_arrakis.sparsity_analyzer.SparsityAnalyzer.compute_activation_sparsity" title="Link to this definition">#</a></dt>
+<dd><p>Computes the sparsity of the activations of the layer.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="core_arrakis.sparsity_analyzer.SparsityAnalyzer.find_polysemantic_neurons">
+<span class="sig-name descname"><span class="pre">find_polysemantic_neurons</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core_arrakis.sparsity_analyzer.SparsityAnalyzer.find_polysemantic_neurons" title="Link to this definition">#</a></dt>
+<dd><p>Finds the polysemantic neurons in the network.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="core_arrakis.sparsity_analyzer.SparsityAnalyzer.prune_network">
+<span class="sig-name descname"><span class="pre">prune_network</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sparsity_threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.9</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core_arrakis.sparsity_analyzer.SparsityAnalyzer.prune_network" title="Link to this definition">#</a></dt>
+<dd><p>Prunes the network based on the sparsity threshold.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-core_arrakis.superposition_disentangler">
+<span id="superpositiondisentangler"></span><h2>SuperpositionDisentangler<a class="headerlink" href="#module-core_arrakis.superposition_disentangler" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="core_arrakis.superposition_disentangler.SuperpositionDisentangler">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">core_arrakis.superposition_disentangler.</span></span><span class="sig-name descname"><span class="pre">SuperpositionDisentangler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core_arrakis.superposition_disentangler.SuperpositionDisentangler" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">BaseInterpretabilityTool</span></code></p>
+<p>Disentangles the superposition of the activations.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="core_arrakis.superposition_disentangler.SuperpositionDisentangler.compute_activation_covariance">
+<span class="sig-name descname"><span class="pre">compute_activation_covariance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ids_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layer</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core_arrakis.superposition_disentangler.SuperpositionDisentangler.compute_activation_covariance" title="Link to this definition">#</a></dt>
+<dd><p>Computes the covariance matrix of the activations.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="core_arrakis.superposition_disentangler.SuperpositionDisentangler.disentangle_superposition">
+<span class="sig-name descname"><span class="pre">disentangle_superposition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cov_matrix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_concepts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core_arrakis.superposition_disentangler.SuperpositionDisentangler.disentangle_superposition" title="Link to this definition">#</a></dt>
+<dd><p>Disentangles the superposition of the activations.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="core_arrakis.superposition_disentangler.SuperpositionDisentangler.interpolate_concepts">
+<span class="sig-name descname"><span class="pre">interpolate_concepts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">concept1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">concept2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core_arrakis.superposition_disentangler.SuperpositionDisentangler.interpolate_concepts" title="Link to this definition">#</a></dt>
+<dd><p>Interpolates between two concepts.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="core_arrakis.superposition_disentangler.SuperpositionDisentangler.project_activations">
+<span class="sig-name descname"><span class="pre">project_activations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">activations</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">concepts</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core_arrakis.superposition_disentangler.SuperpositionDisentangler.project_activations" title="Link to this definition">#</a></dt>
+<dd><p>Projects the activations onto the concepts.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="core_arrakis.superposition_disentangler.SuperpositionDisentangler.reconstruct_activations">
+<span class="sig-name descname"><span class="pre">reconstruct_activations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">projections</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">concepts</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core_arrakis.superposition_disentangler.SuperpositionDisentangler.reconstruct_activations" title="Link to this definition">#</a></dt>
+<dd><p>Reconstructs the activations from the projections.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="right-next"
+       href="README.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Introduction</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-core_arrakis.attention_head_comp">AttentionHeadComposition</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.attention_head_comp.AttentionComposer"><code class="docutils literal notranslate"><span class="pre">AttentionComposer</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.attention_head_comp.AttentionComposer.apply_composed_head"><code class="docutils literal notranslate"><span class="pre">AttentionComposer.apply_composed_head()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.attention_head_comp.AttentionComposer.attention_path_patching"><code class="docutils literal notranslate"><span class="pre">AttentionComposer.attention_path_patching()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.attention_head_comp.AttentionComposer.head_composition"><code class="docutils literal notranslate"><span class="pre">AttentionComposer.head_composition()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-core_arrakis.attention_tools">AttentionTools</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.attention_tools.AttentionTools"><code class="docutils literal notranslate"><span class="pre">AttentionTools</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.attention_tools.AttentionTools.ablate_head"><code class="docutils literal notranslate"><span class="pre">AttentionTools.ablate_head()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.attention_tools.AttentionTools.attention_patterns"><code class="docutils literal notranslate"><span class="pre">AttentionTools.attention_patterns()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.attention_tools.AttentionTools.merge_heads"><code class="docutils literal notranslate"><span class="pre">AttentionTools.merge_heads()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.attention_tools.AttentionTools.top_attended_ids"><code class="docutils literal notranslate"><span class="pre">AttentionTools.top_attended_ids()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-core_arrakis.causal_tracing_intervention">CausalTracingIntervention</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.causal_tracing_intervention.CausalTracer"><code class="docutils literal notranslate"><span class="pre">CausalTracer</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.causal_tracing_intervention.CausalTracer.intervene_on_neuron"><code class="docutils literal notranslate"><span class="pre">CausalTracer.intervene_on_neuron()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.causal_tracing_intervention.CausalTracer.trace_token_probability"><code class="docutils literal notranslate"><span class="pre">CausalTracer.trace_token_probability()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-core_arrakis.kg_extractor">KnowledgeGraphExtractor</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.kg_extractor.KnowledgeGraphExtractor"><code class="docutils literal notranslate"><span class="pre">KnowledgeGraphExtractor</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.kg_extractor.KnowledgeGraphExtractor.extract_relational_subspaces"><code class="docutils literal notranslate"><span class="pre">KnowledgeGraphExtractor.extract_relational_subspaces()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.kg_extractor.KnowledgeGraphExtractor.identify_relation_types"><code class="docutils literal notranslate"><span class="pre">KnowledgeGraphExtractor.identify_relation_types()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.kg_extractor.KnowledgeGraphExtractor.project_token_embeddings"><code class="docutils literal notranslate"><span class="pre">KnowledgeGraphExtractor.project_token_embeddings()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-core_arrakis.knowledge_prober">KnowledgeProber</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.knowledge_prober.KnowledgeProber"><code class="docutils literal notranslate"><span class="pre">KnowledgeProber</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.knowledge_prober.KnowledgeProber.knowledge_probe"><code class="docutils literal notranslate"><span class="pre">KnowledgeProber.knowledge_probe()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.knowledge_prober.KnowledgeProber.polysemantic_score"><code class="docutils literal notranslate"><span class="pre">KnowledgeProber.polysemantic_score()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-core_arrakis.logit_attribution">LogitAttribution</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.logit_attribution.LogitAttributor"><code class="docutils literal notranslate"><span class="pre">LogitAttributor</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.logit_attribution.LogitAttributor.logit_attribution"><code class="docutils literal notranslate"><span class="pre">LogitAttributor.logit_attribution()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.logit_attribution.LogitAttributor.track_token_circulation"><code class="docutils literal notranslate"><span class="pre">LogitAttributor.track_token_circulation()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-core_arrakis.logit_lens">LogitLens</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.logit_lens.LogitLens"><code class="docutils literal notranslate"><span class="pre">LogitLens</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.logit_lens.LogitLens.layer_attributions"><code class="docutils literal notranslate"><span class="pre">LogitLens.layer_attributions()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.logit_lens.LogitLens.logit_lens"><code class="docutils literal notranslate"><span class="pre">LogitLens.logit_lens()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-core_arrakis.model_surgery">ModelSurgery</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.model_surgery.ModelSurgery"><code class="docutils literal notranslate"><span class="pre">ModelSurgery</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.model_surgery.ModelSurgery.delete_layers"><code class="docutils literal notranslate"><span class="pre">ModelSurgery.delete_layers()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.model_surgery.ModelSurgery.get_model"><code class="docutils literal notranslate"><span class="pre">ModelSurgery.get_model()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.model_surgery.ModelSurgery.permute_layers"><code class="docutils literal notranslate"><span class="pre">ModelSurgery.permute_layers()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.model_surgery.ModelSurgery.replace_layers"><code class="docutils literal notranslate"><span class="pre">ModelSurgery.replace_layers()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-core_arrakis.read_write_heads">ReadWriteHeads</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.read_write_heads.WriteReadAnalyzer"><code class="docutils literal notranslate"><span class="pre">WriteReadAnalyzer</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.read_write_heads.WriteReadAnalyzer.identify_read_heads"><code class="docutils literal notranslate"><span class="pre">WriteReadAnalyzer.identify_read_heads()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.read_write_heads.WriteReadAnalyzer.identify_write_heads"><code class="docutils literal notranslate"><span class="pre">WriteReadAnalyzer.identify_write_heads()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.read_write_heads.WriteReadAnalyzer.trace_information_flow"><code class="docutils literal notranslate"><span class="pre">WriteReadAnalyzer.trace_information_flow()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-core_arrakis.residual_decomposer">ResidualDecomposer</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.residual_decomposer.ResidualDecomposer"><code class="docutils literal notranslate"><span class="pre">ResidualDecomposer</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.residual_decomposer.ResidualDecomposer.decompose_residual"><code class="docutils literal notranslate"><span class="pre">ResidualDecomposer.decompose_residual()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.residual_decomposer.ResidualDecomposer.mlp_basis"><code class="docutils literal notranslate"><span class="pre">ResidualDecomposer.mlp_basis()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-core_arrakis.residual_tools">ResidualTools</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.residual_tools.ResidualTools"><code class="docutils literal notranslate"><span class="pre">ResidualTools</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.residual_tools.ResidualTools.feature_attribution"><code class="docutils literal notranslate"><span class="pre">ResidualTools.feature_attribution()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.residual_tools.ResidualTools.residual_decomposition"><code class="docutils literal notranslate"><span class="pre">ResidualTools.residual_decomposition()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.residual_tools.ResidualTools.residual_movement"><code class="docutils literal notranslate"><span class="pre">ResidualTools.residual_movement()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-core_arrakis.sparsity_analyzer">SparsityAnalyzer</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.sparsity_analyzer.SparsityAnalyzer"><code class="docutils literal notranslate"><span class="pre">SparsityAnalyzer</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.sparsity_analyzer.SparsityAnalyzer.compute_activation_sparsity"><code class="docutils literal notranslate"><span class="pre">SparsityAnalyzer.compute_activation_sparsity()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.sparsity_analyzer.SparsityAnalyzer.find_polysemantic_neurons"><code class="docutils literal notranslate"><span class="pre">SparsityAnalyzer.find_polysemantic_neurons()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.sparsity_analyzer.SparsityAnalyzer.prune_network"><code class="docutils literal notranslate"><span class="pre">SparsityAnalyzer.prune_network()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-core_arrakis.superposition_disentangler">SuperpositionDisentangler</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.superposition_disentangler.SuperpositionDisentangler"><code class="docutils literal notranslate"><span class="pre">SuperpositionDisentangler</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.superposition_disentangler.SuperpositionDisentangler.compute_activation_covariance"><code class="docutils literal notranslate"><span class="pre">SuperpositionDisentangler.compute_activation_covariance()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.superposition_disentangler.SuperpositionDisentangler.disentangle_superposition"><code class="docutils literal notranslate"><span class="pre">SuperpositionDisentangler.disentangle_superposition()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.superposition_disentangler.SuperpositionDisentangler.interpolate_concepts"><code class="docutils literal notranslate"><span class="pre">SuperpositionDisentangler.interpolate_concepts()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.superposition_disentangler.SuperpositionDisentangler.project_activations"><code class="docutils literal notranslate"><span class="pre">SuperpositionDisentangler.project_activations()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.superposition_disentangler.SuperpositionDisentangler.reconstruct_activations"><code class="docutils literal notranslate"><span class="pre">SuperpositionDisentangler.reconstruct_activations()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Yash Srivastava
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024, Yash Srivastava.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

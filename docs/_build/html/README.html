@@ -1,0 +1,655 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Introduction &#8212; Arrakis  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'README';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Attention Head Composition" href="AttentionHeadComposition.html" />
+    <link rel="prev" title="Arrakis’s documentation!" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Arrakis  documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AttentionHeadComposition.html">Attention Head Composition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AttentionTools.html">Attention Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CausalTracingIntervention.html">Causal Tracing Intervention</a></li>
+<li class="toctree-l1"><a class="reference internal" href="KnowledgeGraphExtractor.html">Knowledge Graph Extractor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="KnowledgeProber.html">Knowledge Prober</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LogitAttribution.html">Logit Attribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LogitLens.html">LogitLens</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ModelSurgery.html">Model Surgery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ReadWriteHeads.html">Read Write Heads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ResidualDecomposer.html">Residual Decomposer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ResidualTools.html">Residual Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SparsityAnalyzer.html">Sparsity Analyzer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SuperpositionDisentangler.html">Superposition Disentangler</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/README.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Introduction</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tools-and-decomposibility">Tools and Decomposibility</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arrakis-walkthrough">Arrakis Walkthrough</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-install-the-package">Step 1: Install the package</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-create-hookedautomodel">Step 2: Create HookedAutoModel</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-set-up-interpretability-bench">Step 3: Set up Interpretability Bench</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-create-you-experiments">Step 4: Create you experiments</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-visualize-the-results">Step 5: Visualize the Results</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#list-of-tools">List of Tools</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extending-arrakis">Extending Arrakis</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h1>
+<p>Interpretability is a relatively new field where everyday something new is happening. Mechanistic Interpretbaility is one of the approach to reverse engineer neural networks and understand what is happening inside these black-box models.</p>
+<p>Mechanistic Interpretability is a really exciting subfield of alignment, and recently, a lot has been happening in this field - especially at Anthropic. To look at the goal of MI at Anthropic, read this <a class="reference external" href="https://www.lesswrong.com/posts/CzZ6Fch4JSpwCpu6C/interpretability">post</a>. The core operation involved in MI is loading a model, looking at it’s weights and activations, and doing some operations on them and producing results.</p>
+<p>I made <strong>Arrakis</strong> to deeply understand Transformer based models(maybe in future I will try to be model agnostic). The first thought that should come to mind is <em>Why not use Transformer Lens? Neel Nanda has already made significant progress in that</em>. I made Arrakis as I wanted to have a library which can do more than just get the activations - I wanted a more complete library where researchers can do experiments, and track their progress. Think of <strong>Arrakis</strong> as a complete suite to conduct MI experiments, where I try to get the best of both <a class="reference external" href="https://transformerlensorg.github.io/TransformerLens/">Transformer Lens</a> and <a class="reference external" href="https://transformer-circuits.pub/2021/garcon/index.html">Garcon</a>. More features will be added as I understand how to made this library more useful for the community, and I need feedback for that.</p>
+<section id="tools-and-decomposibility">
+<h2>Tools and Decomposibility<a class="headerlink" href="#tools-and-decomposibility" title="Link to this heading">#</a></h2>
+<p>Regardless of what research project you are working on, if you are not keeping track of things, it gets messy really easily. In a field like MI, where you are constantly looking at all different weights and biases, and there are a lot of moving parts - it gets overwhelming fairly easily. I’ve experienced this personally, and being someone who is obsessed with reducing experimentation time and get results quickly, I wanted to have a complete suite which makes my workload easy.</p>
+<p>Arrakis is made so that this doesn’t happen. The core principle behind Arrakis is decomposibility. Do all experiments with plug-and-play tools(will be much clear in the walkthrough). This makes experimentation really flexible, and at the same time, Arrakis keeps track of different versions of the experiments by default. Everything in Arrakis is made in this plug and play fashion. I have even incorporated a graphing library(on top of several popular libraries) to make graphing a lot easier.</p>
+<p>I really want feedback and contributions on this project so that this can be adapted by the community at large.</p>
+</section>
+<section id="arrakis-walkthrough">
+<h2>Arrakis Walkthrough<a class="headerlink" href="#arrakis-walkthrough" title="Link to this heading">#</a></h2>
+<p>Let’s understand how to conduct a small experiment in Arrakis. It is easy, reprodcible and a lot easy to implement.</p>
+<section id="step-1-install-the-package">
+<h3>Step 1: Install the package<a class="headerlink" href="#step-1-install-the-package" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">arrakis</span>  <span class="c1"># TODO: In future.</span>
+</pre></div>
+</div>
+</section>
+<section id="step-2-create-hookedautomodel">
+<h3>Step 2: Create HookedAutoModel<a class="headerlink" href="#step-2-create-hookedautomodel" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">HookedAutoModel</span></code> offers a convinient way to import models from Huggingface directly(with Hooks). Everything just works out of the box. First, create a HookedConfig for the model you want to support with the required parameters. Then, create a <code class="docutils literal notranslate"><span class="pre">HookedAutoModel</span></code> from the config. As of now, these models are supported :</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">[</span> 
+    <span class="s2">&quot;gpt2&quot;</span><span class="p">,</span> 
+    <span class="s2">&quot;gpt-neo&quot;</span><span class="p">,</span> 
+    <span class="s2">&quot;gpt-neox&quot;</span><span class="p">,</span> 
+    <span class="s2">&quot;llama&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;gemma&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;phi3&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;qwen2&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;mistral&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;stable-lm&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p>As mentioned, the core idea behind Arrkis is decompsibility, so a <code class="docutils literal notranslate"><span class="pre">HookedAutoModel</span></code> is a wrapper around Huggingface <code class="docutils literal notranslate"><span class="pre">PreTrainedModel</span></code> class, with a single plug and play decorator for the forward pass. All the model probing happens behind the scenes, and is pre-configured.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">arrakis.src.core_arrakis.activation_cache</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">config</span> <span class="o">=</span> <span class="n">HookedAutoConfig</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;llama&quot;</span><span class="p">,</span> 
+    <span class="n">vocab_size</span><span class="o">=</span><span class="mi">50256</span><span class="p">,</span> 
+    <span class="n">hidden_size</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> 
+    <span class="n">intermediate_size</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> 
+    <span class="n">num_hidden_layers</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> 
+    <span class="n">num_attention_heads</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+    <span class="n">num_key_value_heads</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">HookedAutoModel</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+
+</pre></div>
+</div>
+</section>
+<section id="step-3-set-up-interpretability-bench">
+<h3>Step 3: Set up Interpretability Bench<a class="headerlink" href="#step-3-set-up-interpretability-bench" title="Link to this heading">#</a></h3>
+<p>At it’s core, the whole purpose of Arrakis is to conduct MI experiment. After installing, derive from the <code class="docutils literal notranslate"><span class="pre">BaseInterpretabilityBench</span></code> and instantiate an object(<code class="docutils literal notranslate"><span class="pre">exp</span></code> in this case). This object provides a lot of function out-of the box based on the “tool” you want to use for the experiment, and have access to the functions that the tool provides. You can also create your own tool(read about that <a class="reference internal" href="#extending-arrakis"><span class="std std-ref">here</span></a> )</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">arrakis.src.core_arrakis.base_bench</span> <span class="kn">import</span> <span class="n">BaseInterpretabilityBench</span>
+
+<span class="k">class</span> <span class="nc">MIExperiment</span><span class="p">(</span><span class="n">BaseInterpretabilityBench</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">save_dir</span><span class="o">=</span><span class="s2">&quot;experiments&quot;</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">save_dir</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tools</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;custom&quot;</span><span class="p">:</span> <span class="n">CustomFunction</span><span class="p">(</span><span class="n">model</span><span class="p">)})</span>
+
+<span class="n">exp</span> <span class="o">=</span> <span class="n">MIExperiment</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Apart from access to MI tools, the object also provies you a convinient way to log your experiments. To log your experiments, just decorate the function you are working with <code class="docutils literal notranslate"><span class="pre">&#64;exp.log_experiment</span></code>, and that is pretty much it. The function creates a local version control on the contents of the function, and stores it locally. You can run many things in parallel, and the version control helps you keep track of it.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Step1: Create a function where you can do operations on the model.</span>
+
+<span class="nd">@exp</span><span class="o">.</span><span class="n">log_experiment</span>   <span class="c1"># This is pretty much it. This will log the experiment.</span>
+<span class="k">def</span> <span class="nf">attention_experiment</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This is a placeholder for the experiment. Use as is.&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="mi">4</span>
+
+<span class="c1"># Step 2: Then, you run the function, get results. This starts the experiment.</span>
+<span class="n">attention_experiment</span><span class="p">()</span>
+
+<span class="c1"># Step 3: Then, we will look at some of the things that logs keep a track of</span>
+<span class="n">l</span> <span class="o">=</span> <span class="n">exp</span><span class="o">.</span><span class="n">list_versions</span><span class="p">(</span><span class="s2">&quot;attention_experiment&quot;</span><span class="p">)</span>  <span class="c1"># This gives the hash of the content of the experiment.</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This is the version hash of the experiment: &quot;</span><span class="p">,</span> <span class="n">l</span><span class="p">)</span>
+
+<span class="c1"># Step 4: You can also get the content of the experiment from the saved json.</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">exp</span><span class="o">.</span><span class="n">get_version</span><span class="p">(</span><span class="s2">&quot;attention_experiment&quot;</span><span class="p">,</span> <span class="n">l</span><span class="p">[</span><span class="mi">0</span><span class="p">])[</span><span class="s1">&#39;source&#39;</span><span class="p">])</span>  <span class="c1"># This gives the content of the experiment.</span>
+
+</pre></div>
+</div>
+<p>Apart from these tools, there are also <code class="docutils literal notranslate"><span class="pre">&#64;exp.profile_model</span></code>(to profile how much resources the model is using) and <code class="docutils literal notranslate"><span class="pre">&#64;exp.test_hypothesis</span></code>(to test hypothesis). Support of more tools will be added as I get more feedback from the community.</p>
+</section>
+<section id="step-4-create-you-experiments">
+<h3>Step 4: Create you experiments<a class="headerlink" href="#step-4-create-you-experiments" title="Link to this heading">#</a></h3>
+<p>By default, Arrakis provides a lot of Anthropic’s interpretability experiments(Monosemanticity, Residual Decomposition, Read Write Analysis and a lot more. These are provided as tools, so in your experiments, you can plug and play with them and conduct your experiments. Here’s an example of how you can do that.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Making functions for Arrakis to use is pretty easy. Let&#39;s look it in action.</span>
+
+<span class="c1"># Step 1: Create a function where you can do operations on the model. Think of all the tools you might need for it.</span>
+<span class="c1"># Step 2: Use the @exp.use_tools decorator on it, with additional arg of the tool.</span>
+<span class="c1"># Step 3: The extra argument gives you access to the function. Done.</span>
+
+<span class="nd">@exp</span><span class="o">.</span><span class="n">use_tools</span><span class="p">(</span><span class="s2">&quot;write_read&quot;</span><span class="p">)</span>  <span class="c1"># use the `exp.use_tools()` decorator.</span>
+<span class="k">def</span> <span class="nf">read_write_analysis</span><span class="p">(</span><span class="n">read_layer_idx</span><span class="p">,</span> <span class="n">write_layer_idx</span><span class="p">,</span> <span class="n">src_idx</span><span class="p">,</span> <span class="n">write_read</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>  <span class="c1"># pass an additional argument.</span>
+    <span class="c1"># Multi-hop attention (write-read)</span>
+
+    <span class="c1"># use the extra argument as a tool.</span>
+    <span class="n">write_heads</span> <span class="o">=</span> <span class="n">write_read</span><span class="o">.</span><span class="n">identify_write_heads</span><span class="p">(</span><span class="n">read_layer_idx</span><span class="p">)</span>  
+    <span class="n">read_heads</span> <span class="o">=</span> <span class="n">write_read</span><span class="o">.</span><span class="n">identify_read_heads</span><span class="p">(</span><span class="n">write_layer_idx</span><span class="p">,</span> <span class="n">dim_idx</span><span class="o">=</span><span class="n">src_idx</span><span class="p">)</span> 
+
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="s2">&quot;write_heads&quot;</span><span class="p">:</span> <span class="n">write_heads</span><span class="p">,</span> 
+        <span class="s2">&quot;read_heads&quot;</span><span class="p">:</span> <span class="n">read_heads</span>
+    <span class="p">}</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">read_write_analysis</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span> <span class="c1"># Perfecto!</span>
+
+</pre></div>
+</div>
+</section>
+<section id="step-5-visualize-the-results">
+<h3>Step 5: Visualize the Results<a class="headerlink" href="#step-5-visualize-the-results" title="Link to this heading">#</a></h3>
+<p>Generating plots is Arrakis is also plu and play, just add the decorator and plots are generated by default. Read more about the graphing docs <a class="reference internal" href="#"><span class="xref myst">here</span></a></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="kn">from</span> <span class="nn">arrakis.src.graph.base_graph</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="c1"># Step 1: Create a function where you can want to draw plot.</span>
+<span class="c1"># Step2: Use the @exp.plot_results decorator on it(set the plotting lib), with additional arg of the plot spec. Pass input_ids here as well(have to think on this)</span>
+<span class="c1"># Step3: The extra argument gives you access to the fig. Done.</span>
+
+<span class="n">exp</span><span class="o">.</span><span class="n">set_plotting_lib</span><span class="p">(</span><span class="n">MatplotlibWrapper</span><span class="p">)</span> <span class="c1"># Set the plotting library.</span>
+
+<span class="nd">@exp</span><span class="o">.</span><span class="n">plot_results</span><span class="p">(</span><span class="n">PlotSpec</span><span class="p">(</span><span class="n">plot_type</span> <span class="o">=</span> <span class="s2">&quot;attention&quot;</span><span class="p">,</span> <span class="n">data_keys</span> <span class="o">=</span> <span class="s2">&quot;h.1.attn.c_attn&quot;</span><span class="p">),</span> <span class="n">input_ids</span><span class="o">=</span><span class="n">input_ids</span><span class="p">)</span> <span class="c1"># use the `exp.plot_results()` decorator.</span>
+<span class="k">def</span> <span class="nf">attention_heatmap</span><span class="p">(</span><span class="n">fig</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span> <span class="c1"># pass an additional argument.</span>
+    <span class="k">return</span> <span class="n">fig</span>
+
+<span class="n">attention_heatmap</span><span class="p">()</span> <span class="c1"># Done.</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+</pre></div>
+</div>
+<p>These are three upper level classes in Arrakis. One is the <code class="docutils literal notranslate"><span class="pre">InterpretabilityBench</span></code> where you conduct experiments, the second is the <code class="docutils literal notranslate"><span class="pre">core_arrakis</span></code> where I’ve implemented some common tests for Transformer based model and the third is the <code class="docutils literal notranslate"><span class="pre">Graphing</span></code>.</p>
+</section>
+</section>
+<section id="list-of-tools">
+<h2>List of Tools<a class="headerlink" href="#list-of-tools" title="Link to this heading">#</a></h2>
+<p>There is a lot of what’s happening inside the <code class="docutils literal notranslate"><span class="pre">core_arrakis</span></code>. There are a lot of tools that we can use, which we’ll deal with one by one. We’ll understand what they do and how to use Arrakis to test them. These tools are supported as of now(please contribute more!)</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="AttentionHeadComposition.html"><span class="std std-doc">Attention Head Composition</span></a></p></li>
+<li><p><a class="reference internal" href="AttentionTools.html"><span class="std std-doc">Attention Tools</span></a></p></li>
+<li><p><a class="reference internal" href="CausalTracingIntervention.html"><span class="std std-doc">Causal Tracing Intervention</span></a></p></li>
+<li><p><a class="reference internal" href="KnowledgeGraphExtractor.html"><span class="std std-doc">Knowledge Graph Extractor</span></a></p></li>
+<li><p><a class="reference internal" href="KnowledgeProber.html"><span class="std std-doc">Knowledge Prober</span></a></p></li>
+<li><p><a class="reference internal" href="LogitAttribution.html"><span class="std std-doc">Logit Attribution</span></a></p></li>
+<li><p><a class="reference internal" href="LogitLens.html"><span class="std std-doc">Logit Lens</span></a></p></li>
+<li><p><a class="reference internal" href="ReadWriteHeads.html"><span class="std std-doc">Read Write Heads</span></a></p></li>
+<li><p><a class="reference internal" href="ResidualDecomposer.html"><span class="std std-doc">Residual Decomposition</span></a></p></li>
+<li><p><a class="reference internal" href="ResidualTools.html"><span class="std std-doc">Residual Tools</span></a></p></li>
+<li><p><a class="reference internal" href="SparsityAnalyzer.html"><span class="std std-doc">Sparsity Analyzer</span></a></p></li>
+<li><p><a class="reference internal" href="SuperpositionDisentangler.html"><span class="std std-doc">Superposition Disentangler</span></a></p></li>
+</ul>
+<p>Go to their respective pages and read about what they mean and how to use Arrakis to conduct experiments.</p>
+</section>
+<section id="extending-arrakis">
+<h2>Extending Arrakis<a class="headerlink" href="#extending-arrakis" title="Link to this heading">#</a></h2>
+<p>Apart from all of these tool, it is easy to develop tools on your own which you can use for your experiment. These are the steps to do so:</p>
+<ul class="simple">
+<li><p>Step 1: Make a class which inherits from the BaseInterpretabilityTool</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">arrakis.src.core_arrakis.base_interpret</span> <span class="kn">import</span> <span class="n">BaseInterpretabilityTool</span>
+
+<span class="k">class</span> <span class="nc">CustomTool</span><span class="p">(</span><span class="n">BaseInterpretabilityTool</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">model</span>
+
+    <span class="k">def</span> <span class="nf">custom_function</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="c1"># do some computations</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">another_custom_function</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="c1"># do another calcualtions</span>
+        <span class="k">pass</span> 
+</pre></div>
+</div>
+<p>The attribute <code class="docutils literal notranslate"><span class="pre">model</span></code> is a wrapper around Huggingface <code class="docutils literal notranslate"><span class="pre">PreTrainedModel</span></code> with many additional features which makes easier for experimentation purposes. The reference for model is given <a class="reference internal" href="#"><span class="xref myst">here</span></a>. Write your function that utilizes the ActivationCache and get the intermediate activations.</p>
+<ul class="simple">
+<li><p>Step 2: In the derived class from <code class="docutils literal notranslate"><span class="pre">BaseInterpretabilityBench</span></code>, add your custom tool in the following manner.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">src.bench.base_bench</span> <span class="kn">import</span> <span class="n">BaseInteroretabilityBench</span>
+<span class="c1"># Import the custom tool here.</span>
+
+<span class="k">class</span> <span class="nc">ExperimentBench</span><span class="p">(</span><span class="n">BaseInterpretabilityBench</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">save_dir</span><span class="o">=</span><span class="s2">&quot;experiments&quot;</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">save_dir</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tools</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;custom&quot;</span><span class="p">:</span> <span class="n">CustomTool</span><span class="p">(</span><span class="n">model</span><span class="p">)})</span>
+
+<span class="n">exp</span> <span class="o">=</span> <span class="n">ExperimentBench</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>  <span class="c1"># where model is an instance of HookedAutoModel</span>
+</pre></div>
+</div>
+<p>And that is pretty much it. Now, in order to use it in a function, just do the following:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="nd">@exp</span><span class="o">.</span><span class="n">use_tools</span><span class="p">(</span><span class="s2">&quot;custom&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">test_custom_function</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">,</span> <span class="n">custom</span><span class="p">):</span> <span class="c1"># the final argument should be the same name as the tool key. </span>
+    <span class="n">custom</span><span class="o">.</span><span class="n">custom_function</span><span class="p">()</span>
+    <span class="n">custom</span><span class="o">.</span><span class="n">another_custom_function</span><span class="p">()</span>
+
+<span class="n">test_custom_function</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Adding your own tool is really easy in Arrakis. Read the API reference guide to see how to implement your own functions. Open a PR for tools that are not implemented and I can add it quickly.</p>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Arrakis’s documentation!</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="AttentionHeadComposition.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Attention Head Composition</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tools-and-decomposibility">Tools and Decomposibility</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arrakis-walkthrough">Arrakis Walkthrough</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-install-the-package">Step 1: Install the package</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-create-hookedautomodel">Step 2: Create HookedAutoModel</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-set-up-interpretability-bench">Step 3: Set up Interpretability Bench</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-create-you-experiments">Step 4: Create you experiments</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-visualize-the-results">Step 5: Visualize the Results</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#list-of-tools">List of Tools</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extending-arrakis">Extending Arrakis</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Yash Srivastava
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024, Yash Srivastava.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
