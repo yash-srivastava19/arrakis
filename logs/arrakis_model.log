@@ -1,0 +1,6 @@
+2024-07-11 15:54:08,478 - arrakis.src.core_arrakis.activation_cache - DEBUG - Invoked Activation Cache. Registering hooks for : forward
+2024-07-11 15:54:08,478 - arrakis.src.core_arrakis.activation_cache - DEBUG - Invoked HookedAutoConfig. Creating config for gpt2. Args are () and kwargs are {'vocab_size': 50256, 'hidden_size': 8, 'intermediate_size': 4, 'num_hidden_layers': 4, 'num_attention_heads': 8, 'num_key_value_heads': 4}
+2024-07-11 15:54:08,478 - arrakis.src.core_arrakis.activation_cache - DEBUG - Invoked HookedAutoModel. Creating model for gpt2
+2024-07-11 15:54:08,491 - arrakis.src.core_arrakis.activation_cache - DEBUG - Registering hooks for gpt2
+2024-07-11 15:54:08,491 - arrakis.src.core_arrakis.activation_cache - DEBUG - Registering iterative hooks(or blocks/layers) for gpt2
+2024-07-11 15:54:08,491 - arrakis.src.core_arrakis.activation_cache - DEBUG - Registering hooks for the last module(logits) of the model : gpt2

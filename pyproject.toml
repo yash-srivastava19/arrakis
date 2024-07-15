@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "arrakis-mi"
+version = "0.1.1"
+description = "A mechanistic interpretability library for nerds."
+authors = ["Yash Srivastava <ysrivastava82@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "arrakis"}]
+repository = "https://github.com/yash-srivastava19/arrakis"
+documentation = "https://arrakis-mi.readthedocs.io/en/latest/README.html"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+transformers = "^4.41.2"
+torch = "2.2.1"
+numpy = "<2"
+seaborn = "^0.13.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
