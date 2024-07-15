@@ -20,7 +20,7 @@ Let's understand how to conduct a small experiment in Arrakis. It is easy, repro
 ### Step 1: Install the package
 All the dependencies of the project are maintained through poetry.
 ```python
-pip install arrakis  # TODO: In future.
+pip install arrakis-mi
 ```
 
 ### Step 2: Create HookedAutoModel
