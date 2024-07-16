@@ -22,5 +22,41 @@ Attention Tools is a comprehensive framework designed to facilitate the understa
 
 ## Example Usage
 
+```python
+# imports to run this example
+import torch
+from arrakis.src.core_arrakis.activation_cache import *
+from arrakis.src.bench.base_bench import BaseInterpretabilityBench
+
+config = HookedAutoConfig(name="llama") # keep default values for other args
+model = HookedAutoModel(config)
+
+input_ids = torch.randint(0, 50256, (1, 50)) # generate some random tokens(replace with your ids)
+
+# Derive from BaseInterpretabilityBench
+class MIExperiment(BaseInterpretabilityBench):
+   def __init__(self, model, save_dir="experiments"):
+      super().__init__(model, save_dir)
+
+exp = MIExperiment(model) # create an `exp` object.
+
+@exp.use_tools("attention") # the tool name to be used.
+def test_attention_tools(layer_idx, head_idx1, head_idx2, alpha, attention): # same as tool name, one extra arg is passed.
+
+   # Change this function as per your needs!
+   ablate_head = attention.ablate_head(layer_idx, head_idx1)
+   merge_heads = attention.merge_heads(layer_idx, head_idx1, head_idx2, alpha)
+   attention_patterns = attention.attention_patterns(input_ids, layer_idx, head_idx1)
+   top_attended_ids = attention.top_attended_ids(input_ids, layer_idx, head_idx1, 1)
+   return {
+      "ablate_head": ablate_head,
+      "merge_heads": merge_heads,
+      "attention_patterns": attention_patterns,
+      "top_attended_ids": top_attended_ids}
+
+# Driver code, call the function based on whatever arguments you want!
+test_attention_tools(0, 0, 1, 0.5) # one such example. Change as needed!
+```
+
 ## Resources
 - [A Mathematical Framework for Transformer Circuits](https://transformer-circuits.pub/2021/framework/index.html)

@@ -21,7 +21,38 @@ Sparsity Analyzer is a tool designed for analyzing the sparsity of activations w
 
 ## Example Usage
 
-*This section will provide practical examples and code snippets demonstrating how to utilize the methods listed above. It will illustrate their application in real-world scenarios, helping users to effectively leverage the Sparsity Analyzer for their specific needs.*
+```python
+# imports to run this example
+import torch
+from arrakis.src.core_arrakis.activation_cache import *
+from arrakis.src.bench.base_bench import BaseInterpretabilityBench
+
+config = HookedAutoConfig(name="llama") # keep default values for other args
+model = HookedAutoModel(config)
+
+input_ids = torch.randint(0, 50256, (1, 50)) # generate some random tokens(replace with your ids)
+
+# Derive from BaseInterpretabilityBench
+class MIExperiment(BaseInterpretabilityBench):
+   def __init__(self, model, save_dir="experiments"):
+      super().__init__(model, save_dir)
+
+exp = MIExperiment(model) # create an `exp` object.
+
+@exp.use_tools("sparsity") # the tool name to be used.
+def test_sparsity_analyzer(input_ids, layer="layers.1.self_attn.hook_result_post",  sparsity=None): # same as tool name, extra arg is passed.
+   act_sparsity = sparsity.compute_activation_sparsity([input_ids], layer)
+   find_ps_neu = sparsity.find_polysemantic_neurons(3)
+   prune_network = sparsity.prune_network(0.9)
+   return {
+      "act_sparsity": act_sparsity,
+      "find_ps_neu": find_ps_neu,
+      "prune_network": prune_network
+   }
+
+# Driver code, call the function based on whatever arguments you want!
+test_sparsity_analyzer(input_ids, layer="layers.0.self_attn.hook_result_post") # one such example. Change as needed!
+```
 
 ## Resources
 

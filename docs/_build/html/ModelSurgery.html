@@ -154,6 +154,7 @@
 <li class="toctree-l1"><a class="reference internal" href="AttentionHeadComposition.html">Attention Head Composition</a></li>
 <li class="toctree-l1"><a class="reference internal" href="AttentionTools.html">Attention Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="CausalTracingIntervention.html">Causal Tracing Intervention</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FeatureVisualization.html">Feature Visualization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="KnowledgeGraphExtractor.html">Knowledge Graph Extractor</a></li>
 <li class="toctree-l1"><a class="reference internal" href="KnowledgeProber.html">Knowledge Prober</a></li>
 <li class="toctree-l1"><a class="reference internal" href="LogitAttribution.html">Logit Attribution</a></li>
@@ -384,25 +385,39 @@ document.write(`
 </section>
 <section id="example-usage">
 <h2>Example Usage<a class="headerlink" href="#example-usage" title="Link to this heading">#</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pre_trained_models_hf</span> <span class="kn">import</span> <span class="n">model</span>
-<span class="kn">from</span> <span class="nn">model_surgery</span> <span class="kn">import</span> <span class="n">ModelSurgery</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># imports to run this example</span>
+<span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">from</span> <span class="nn">arrakis.src.core_arrakis.activation_cache</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">arrakis.src.bench.base_bench</span> <span class="kn">import</span> <span class="n">BaseInterpretabilityBench</span>
 
-<span class="n">ms</span> <span class="o">=</span> <span class="n">ModelSurgery</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+<span class="n">config</span> <span class="o">=</span> <span class="n">HookedAutoConfig</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;llama&quot;</span><span class="p">)</span> <span class="c1"># keep default values for other args</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">HookedAutoModel</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
 
-<span class="c1"># Temporarily delete layers 0 and 1</span>
-<span class="k">with</span> <span class="n">ms</span><span class="o">.</span><span class="n">delete_layers</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]):</span>
-        <span class="c1"># Perform operations with the modified model</span>
-        <span class="k">pass</span>
+<span class="n">input_ids</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">50256</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">50</span><span class="p">))</span> <span class="c1"># generate some random tokens(replace with your ids)</span>
 
-<span class="c1"># Temporarily permute layers 0 and 1</span>
-<span class="k">with</span> <span class="n">ms</span><span class="o">.</span><span class="n">permute_layers</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]):</span>
-        <span class="c1"># Perform operations with the modified model</span>
-        <span class="k">pass</span>
+<span class="c1"># Derive from BaseInterpretabilityBench</span>
+<span class="k">class</span> <span class="nc">MIExperiment</span><span class="p">(</span><span class="n">BaseInterpretabilityBench</span><span class="p">):</span>
+   <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">save_dir</span><span class="o">=</span><span class="s2">&quot;experiments&quot;</span><span class="p">):</span>
+      <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">save_dir</span><span class="p">)</span>
 
-<span class="c1"># Temporarily replace layers 0 and 1 with new linear layers</span>
-<span class="k">with</span> <span class="n">ms</span><span class="o">.</span><span class="n">replace_layers</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">),</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">)]):</span>
-        <span class="c1"># Perform operations with the modified model</span>
-        <span class="k">pass</span>
+<span class="n">exp</span> <span class="o">=</span> <span class="n">MIExperiment</span><span class="p">(</span><span class="n">model</span><span class="p">)</span> <span class="c1"># create an `exp` object.</span>
+
+<span class="nd">@exp</span><span class="o">.</span><span class="n">use_tools</span><span class="p">(</span><span class="s2">&quot;surgery&quot;</span><span class="p">)</span> <span class="c1"># the name of the tool to be used.</span>
+<span class="k">def</span> <span class="nf">test_model_surgery</span><span class="p">(</span><span class="n">indicies</span><span class="p">,</span> <span class="n">replacements</span><span class="p">,</span> <span class="n">surgery</span><span class="p">):</span> <span class="c1"># same name as tool name, extra argument is passed.</span>
+   <span class="n">model</span> <span class="o">=</span> <span class="n">surgery</span><span class="o">.</span><span class="n">get_model</span><span class="p">()</span>
+   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Before surgery: </span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">model</span><span class="p">)</span>
+
+   <span class="k">with</span> <span class="n">surgery</span><span class="o">.</span><span class="n">replace_layers</span><span class="p">(</span><span class="n">indicies</span><span class="p">,</span> <span class="n">replacements</span><span class="p">):</span>
+       <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;After surgery: </span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">model</span><span class="p">)</span>
+        <span class="c1"># print(surgery.permute_layers([0, 1]))</span>
+   <span class="k">with</span> <span class="n">surgery</span><span class="o">.</span><span class="n">permute_layers</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]):</span>
+       <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;After surgery: </span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">model</span><span class="p">)</span>
+
+    <span class="k">with</span> <span class="n">surgery</span><span class="o">.</span><span class="n">delete_layers</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]):</span>
+       <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;After surgery: </span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">model</span><span class="p">)</span>
+
+<span class="c1"># Driver code, call the function based on whatever arguments you want!</span>
+<span class="n">test_model_surgery</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="n">model</span><span class="o">.</span><span class="n">model_attrs</span><span class="o">.</span><span class="n">get_mlp_out</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">model</span><span class="o">.</span><span class="n">model_attrs</span><span class="o">.</span><span class="n">get_mlp_out</span><span class="p">(</span><span class="mi">1</span><span class="p">)])</span> <span class="c1"># one such example. Change as needed!</span>
 </pre></div>
 </div>
 </section>

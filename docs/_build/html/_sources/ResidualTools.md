@@ -21,7 +21,38 @@ Residual Tools is a suite designed to analyze and interpret the role of residual
 
 ## Example Usage
 
-*This section will provide practical examples and code snippets demonstrating how to utilize the methods listed above. It will illustrate their application in real-world scenarios, helping users to effectively leverage Residual Tools for their specific needs.*
+```python
+# imports to run this example
+import torch
+from arrakis.src.core_arrakis.activation_cache import *
+from arrakis.src.bench.base_bench import BaseInterpretabilityBench
+
+config = HookedAutoConfig(name="llama") # keep default values for other args
+model = HookedAutoModel(config)
+
+input_ids = torch.randint(0, 50256, (1, 50)) # generate some random tokens(replace with your ids)
+
+# Derive from BaseInterpretabilityBench
+class MIExperiment(BaseInterpretabilityBench):
+   def __init__(self, model, save_dir="experiments"):
+      super().__init__(model, save_dir)
+
+exp = MIExperiment(model) # create an `exp` object.
+
+@exp.use_tools("residual") # the tool name to be used.
+def test_residual_tools(layer_idx, residual): # same as tool name, extra arg is used.
+   rd = residual.residual_decomposition(input_ids, layer_idx)
+   rm = residual.residual_movement(input_ids, 0, 1)
+   fa = residual.feature_attribution(input_ids, 0)
+   return {
+      "residual_decomposition": rd,
+      "residual_movement": rm,
+      "feature_attribution": fa
+   }
+
+# Driver code, call the function based on whatever arguments you want!
+test_residual_tools(0) # one such example. Change as needed!
+```
 
 ## Resources
 

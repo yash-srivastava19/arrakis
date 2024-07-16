@@ -19,7 +19,36 @@ Knowledge Prober is a tool designed for analyzing the polysemy of tokens and pro
 
 ## Example Usage
 
-*This section will provide practical examples and code snippets demonstrating how to utilize the methods listed above. It will illustrate their application in real-world scenarios, helping users to effectively leverage the Knowledge Prober for their specific needs.*
+```python
+# imports to run this example
+import torch
+from arrakis.src.core_arrakis.activation_cache import *
+from arrakis.src.bench.base_bench import BaseInterpretabilityBench
+
+config = HookedAutoConfig(name="llama") # keep default values for other args
+model = HookedAutoModel(config)
+
+input_ids = torch.randint(0, 50256, (1, 50)) # generate some random tokens(replace with your ids)
+
+# Derive from BaseInterpretabilityBench
+class MIExperiment(BaseInterpretabilityBench):
+   def __init__(self, model, save_dir="experiments"):
+      super().__init__(model, save_dir)
+
+exp = MIExperiment(model) # create an `exp` object.
+
+@exp.use_tools("k_prober") # the tool name to be used.
+def test_knowledge_prober(ids, layer_idx, neuron_idx, k_prober): # same as tool name, one extra arg is passed.
+   pscore = k_prober.polysemantic_score(layer_idx, 2)
+   true_false = k_prober.knowledge_probe([(ids, ids)], (layer_idx, neuron_idx))
+   return {
+      "k_probe": true_false,
+      "polysemantic_score": pscore
+   }
+
+# Driver code, call the function based on whatever arguments you want!
+test_knowledge_prober(input_ids, 0, 0) # one such example. Change as needed!
+```
 
 ## Resources
 

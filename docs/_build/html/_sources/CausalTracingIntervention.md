@@ -19,7 +19,36 @@ Causal Tracing Intervention is a methodology designed to dissect and understand 
 
 ## Example Usage
 
-*This section will provide practical examples and code snippets demonstrating how to utilize the methods listed above. It will illustrate their application in real-world scenarios, helping users to effectively leverage the Causal Tracing Intervention methodology.*
+```python
+# imports to run this example
+import torch
+from arrakis.src.core_arrakis.activation_cache import *
+from arrakis.src.bench.base_bench import BaseInterpretabilityBench
+
+config = HookedAutoConfig(name="llama") # keep default values for other args
+model = HookedAutoModel(config)
+
+input_ids = torch.randint(0, 50256, (1, 50)) # generate some random tokens(replace with your ids)
+
+# Derive from BaseInterpretabilityBench
+class MIExperiment(BaseInterpretabilityBench):
+   def __init__(self, model, save_dir="experiments"):
+      super().__init__(model, save_dir)
+
+exp = MIExperiment(model) # create an `exp` object.
+
+@exp.use_tools("causal") # the tool name to be used.
+def test_causal_attention(input_ids, layer_idx, neu_idx, scale, causal): # # same as tool name, one extra arg is passed.
+   ttp = causal.trace_token_probability(input_ids, 0)
+   intervene = causal.intervene_on_neuron(input_ids, layer_idx, neu_idx, scale)
+   return {
+      "intervene": intervene,
+      "trace_token_probability": ttp
+   }
+
+# Driver code, call the function based on whatever arguments you want!
+test_causal_attention(input_ids, 0, 0, 0.5) # one such example. Change as needed!
+```
 
 ## Resources
 

@@ -22,25 +22,39 @@ Model Surgery is a Python class designed for performing temporary modifications 
 ## Example Usage
 
 ```python
-from pre_trained_models_hf import model
-from model_surgery import ModelSurgery
+# imports to run this example
+import torch
+from arrakis.src.core_arrakis.activation_cache import *
+from arrakis.src.bench.base_bench import BaseInterpretabilityBench
 
-ms = ModelSurgery(model)
+config = HookedAutoConfig(name="llama") # keep default values for other args
+model = HookedAutoModel(config)
 
-# Temporarily delete layers 0 and 1
-with ms.delete_layers([0, 1]):
-        # Perform operations with the modified model
-        pass
+input_ids = torch.randint(0, 50256, (1, 50)) # generate some random tokens(replace with your ids)
 
-# Temporarily permute layers 0 and 1
-with ms.permute_layers([1, 0]):
-        # Perform operations with the modified model
-        pass
+# Derive from BaseInterpretabilityBench
+class MIExperiment(BaseInterpretabilityBench):
+   def __init__(self, model, save_dir="experiments"):
+      super().__init__(model, save_dir)
 
-# Temporarily replace layers 0 and 1 with new linear layers
-with ms.replace_layers([0, 1], [torch.nn.Linear(128, 128), torch.nn.Linear(128, 128)]):
-        # Perform operations with the modified model
-        pass
+exp = MIExperiment(model) # create an `exp` object.
+
+@exp.use_tools("surgery") # the name of the tool to be used.
+def test_model_surgery(indicies, replacements, surgery): # same name as tool name, extra argument is passed.
+   model = surgery.get_model()
+   print("Before surgery: \n\n",model)
+
+   with surgery.replace_layers(indicies, replacements):
+       print("After surgery: \n\n",model)
+        # print(surgery.permute_layers([0, 1]))
+   with surgery.permute_layers([0, 1]):
+       print("After surgery: \n\n",model)
+
+    with surgery.delete_layers([0, 1]):
+       print("After surgery: \n\n",model)
+
+# Driver code, call the function based on whatever arguments you want!
+test_model_surgery([0, 1], [model.model_attrs.get_mlp_out(0), model.model_attrs.get_mlp_out(1)]) # one such example. Change as needed!
 ```
 ## Resources
 

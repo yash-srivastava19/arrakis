@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Residual Decomposer &#8212; Arrakis  documentation</title>
+    <title>Feature Visualization &#8212; Arrakis  documentation</title>
   
   
   
@@ -40,11 +40,11 @@
     <script src="_static/doctools.js?v=9a2dae69"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'ResidualDecomposer';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'FeatureVisualization';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Residual Tools" href="ResidualTools.html" />
-    <link rel="prev" title="Read Write Heads" href="ReadWriteHeads.html" />
+    <link rel="next" title="Knowledge Graph Extractor" href="KnowledgeGraphExtractor.html" />
+    <link rel="prev" title="Causal Tracing Intervention" href="CausalTracingIntervention.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -154,14 +154,14 @@
 <li class="toctree-l1"><a class="reference internal" href="AttentionHeadComposition.html">Attention Head Composition</a></li>
 <li class="toctree-l1"><a class="reference internal" href="AttentionTools.html">Attention Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="CausalTracingIntervention.html">Causal Tracing Intervention</a></li>
-<li class="toctree-l1"><a class="reference internal" href="FeatureVisualization.html">Feature Visualization</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Feature Visualization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="KnowledgeGraphExtractor.html">Knowledge Graph Extractor</a></li>
 <li class="toctree-l1"><a class="reference internal" href="KnowledgeProber.html">Knowledge Prober</a></li>
 <li class="toctree-l1"><a class="reference internal" href="LogitAttribution.html">Logit Attribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="LogitLens.html">LogitLens</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ModelSurgery.html">Model Surgery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ReadWriteHeads.html">Read Write Heads</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Residual Decomposer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ResidualDecomposer.html">Residual Decomposer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ResidualTools.html">Residual Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="SparsityAnalyzer.html">Sparsity Analyzer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="SuperpositionDisentangler.html">Superposition Disentangler</a></li>
@@ -219,7 +219,7 @@
       
       
       
-      <li><a href="_sources/ResidualDecomposer.md" target="_blank"
+      <li><a href="_sources/FeatureVisualization.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -303,7 +303,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Residual Decomposer</h1>
+    <h1>Feature Visualization</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -314,10 +314,10 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-core_arrakis.residual_decomposer">API Reference</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.residual_decomposer.ResidualDecomposer"><code class="docutils literal notranslate"><span class="pre">ResidualDecomposer</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.residual_decomposer.ResidualDecomposer.decompose_residual"><code class="docutils literal notranslate"><span class="pre">ResidualDecomposer.decompose_residual()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.residual_decomposer.ResidualDecomposer.mlp_basis"><code class="docutils literal notranslate"><span class="pre">ResidualDecomposer.mlp_basis()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-core_arrakis.feature_viz">API Reference</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.feature_viz.FeatureViz"><code class="docutils literal notranslate"><span class="pre">FeatureViz</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.feature_viz.FeatureViz.activate_neuron"><code class="docutils literal notranslate"><span class="pre">FeatureViz.activate_neuron()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.feature_viz.FeatureViz.neuron_interpolation"><code class="docutils literal notranslate"><span class="pre">FeatureViz.neuron_interpolation()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -335,37 +335,33 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="residual-decomposer">
-<h1>Residual Decomposer<a class="headerlink" href="#residual-decomposer" title="Link to this heading">#</a></h1>
+  <section id="feature-visualization">
+<h1>Feature Visualization<a class="headerlink" href="#feature-visualization" title="Link to this heading">#</a></h1>
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
-<p>Residual Decomposer is a tool designed for analyzing the residual connections within transformer models. It focuses on decomposing the residuals into their constituent components, allowing for a detailed examination of how information is preserved and transformed across layers.</p>
+<p>Feature Visualization is a methodology designed to dissect and understand the causal mechanisms within transformer models. It focuses on tracing the influence of specific tokens or neurons on the model’s output, allowing for a granular analysis of how input features affect predictions. This approach is particularly useful for performing targeted intervention on activations to observe the impact on the final output.</p>
 </section>
-<section id="module-core_arrakis.residual_decomposer">
-<span id="api-reference"></span><h2>API Reference<a class="headerlink" href="#module-core_arrakis.residual_decomposer" title="Link to this heading">#</a></h2>
+<section id="module-core_arrakis.feature_viz">
+<span id="api-reference"></span><h2>API Reference<a class="headerlink" href="#module-core_arrakis.feature_viz" title="Link to this heading">#</a></h2>
 <dl class="py class">
-<dt class="sig sig-object py" id="core_arrakis.residual_decomposer.ResidualDecomposer">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">core_arrakis.residual_decomposer.</span></span><span class="sig-name descname"><span class="pre">ResidualDecomposer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core_arrakis.residual_decomposer.ResidualDecomposer" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="core_arrakis.feature_viz.FeatureViz">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">core_arrakis.feature_viz.</span></span><span class="sig-name descname"><span class="pre">FeatureViz</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core_arrakis.feature_viz.FeatureViz" title="Link to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">BaseInterpretabilityTool</span></code></p>
-<p>Decomposes the residual stream into interpretable components from MLP and attention.</p>
+<p>Visulizing what neurons or features are sensitive to in a model.</p>
 <dl class="py method">
-<dt class="sig sig-object py" id="core_arrakis.residual_decomposer.ResidualDecomposer.decompose_residual">
-<span class="sig-name descname"><span class="pre">decompose_residual</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_ids</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layer_idx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">top_k</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core_arrakis.residual_decomposer.ResidualDecomposer.decompose_residual" title="Link to this definition">#</a></dt>
-<dd><p>Decomposes the residual stream into interpretable components from MLP and attention.</p>
+<dt class="sig sig-object py" id="core_arrakis.feature_viz.FeatureViz.activate_neuron">
+<span class="sig-name descname"><span class="pre">activate_neuron</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_ids</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layer_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">neuron_idx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">top_k</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core_arrakis.feature_viz.FeatureViz.activate_neuron" title="Link to this definition">#</a></dt>
+<dd><p>Find inputs that most activate a given neuron in a given layer of the model.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="core_arrakis.residual_decomposer.ResidualDecomposer.mlp_basis">
-<span class="sig-name descname"><span class="pre">mlp_basis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">layer_idx</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core_arrakis.residual_decomposer.ResidualDecomposer.mlp_basis" title="Link to this definition">#</a></dt>
-<dd><p>Computes the basis of the MLP layer.</p>
+<dt class="sig sig-object py" id="core_arrakis.feature_viz.FeatureViz.neuron_interpolation">
+<span class="sig-name descname"><span class="pre">neuron_interpolation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_ids</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layer_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">neuron_idx1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">neuron_idx2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_interpolations</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_new_tokens</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core_arrakis.feature_viz.FeatureViz.neuron_interpolation" title="Link to this definition">#</a></dt>
+<dd><p>Interpolate between two neurons to understand their sematic space.</p>
 </dd></dl>
 
 </dd></dl>
 
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">mlp_basis(layer_idx)</span></code>: Identifies the basis components of the Multi-Layer Perceptron (MLP) within a specified layer. This method is crucial for understanding the foundational elements that contribute to the layer’s output.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">decompose_residual(input_ids,</span> <span class="pre">layer_idx,</span> <span class="pre">top_k=10)</span></code>: Decomposes the residual connections at a specified layer into their top <code class="docutils literal notranslate"><span class="pre">k</span></code> components. This method provides insights into the most significant contributors to the residual signal, offering a deeper understanding of information flow and transformation within the model.</p></li>
-</ul>
 </section>
 <section id="example-usage">
 <h2>Example Usage<a class="headerlink" href="#example-usage" title="Link to this heading">#</a></h2>
@@ -386,20 +382,23 @@ document.write(`
 
 <span class="n">exp</span> <span class="o">=</span> <span class="n">MIExperiment</span><span class="p">(</span><span class="n">model</span><span class="p">)</span> <span class="c1"># create an `exp` object.</span>
 
-<span class="nd">@exp</span><span class="o">.</span><span class="n">use_tools</span><span class="p">(</span><span class="s2">&quot;decomposer&quot;</span><span class="p">)</span> <span class="c1"># the tool name to be used.</span>
-<span class="k">def</span> <span class="nf">test_residual_decomposer</span><span class="p">(</span><span class="n">input_ids</span><span class="p">,</span> <span class="n">layer_idx</span><span class="p">,</span> <span class="n">decomposer</span><span class="p">):</span> <span class="c1"># same as tool name, extra arg is passed.</span>
-   <span class="n">rd</span> <span class="o">=</span> <span class="n">decomposer</span><span class="o">.</span><span class="n">decompose_residual</span><span class="p">(</span><span class="n">input_ids</span><span class="p">,</span> <span class="n">layer_idx</span><span class="p">)</span>
-   <span class="k">return</span> <span class="n">rd</span>
+<span class="nd">@exp</span><span class="o">.</span><span class="n">use_tools</span><span class="p">(</span><span class="s2">&quot;feature_viz&quot;</span><span class="p">)</span> <span class="c1"># the tool name to be used.</span>
+<span class="k">def</span> <span class="nf">test_feature_viz</span><span class="p">(</span><span class="n">feature_viz</span><span class="p">):</span> <span class="c1"># same as tool name, extra arg is passed.</span>
+    <span class="n">top_k</span> <span class="o">=</span> <span class="n">feature_viz</span><span class="o">.</span><span class="n">activate_neuron</span><span class="p">([</span><span class="n">input_ids</span><span class="p">],</span><span class="s2">&quot;layers.1.self_attn.q_proj.hook_result_pre&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">top_k</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+    <span class="n">interpolations</span> <span class="o">=</span> <span class="n">feature_viz</span><span class="o">.</span><span class="n">neuron_interpolation</span><span class="p">(</span><span class="n">input_ids</span><span class="p">,</span> <span class="s2">&quot;model.layers.1&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">num_interpolations</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">max_new_tokens</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;top_k&quot;</span><span class="p">:</span> <span class="n">top_k</span><span class="p">,</span> <span class="s2">&quot;interpolations&quot;</span><span class="p">:</span> <span class="n">interpolations</span><span class="p">}</span>
 
 <span class="c1"># Driver code, call the function based on whatever arguments you want!</span>
-<span class="n">test_residual_decomposer</span><span class="p">(</span><span class="n">input_ids</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="c1"># one such example. Change as needed!</span>
+<span class="n">test_feature_viz</span><span class="p">()</span> <span class="c1"># one such example. Change as needed!</span>
 </pre></div>
 </div>
 </section>
 <section id="resources">
 <h2>Resources<a class="headerlink" href="#resources" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p><a class="reference external" href="https://transformer-circuits.pub/2021/framework/index.html">A Mathematical Framework for Transformer Circuits</a>: An essential resource for those interested in the mathematical and theoretical foundations of transformer models. It offers a comprehensive exploration of residual decomposition, making it an invaluable resource for researchers and practitioners looking to deepen their understanding of transformer model dynamics.</p></li>
+<li><p><a class="reference external" href="https://distill.pub/2017/feature-visualization/">Feature Visualization - Distill Pub</a></p></li>
+<li><p><a class="reference external" href="https://microscope.openai.com/models">OpenAI Microscope</a></p></li>
+<li><p><a class="reference external" href="https://github.com/tensorflow/lucid/">Lucid, a feature visualization library for images</a></p></li>
 </ul>
 </section>
 </section>
@@ -416,20 +415,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="ReadWriteHeads.html"
+       href="CausalTracingIntervention.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Read Write Heads</p>
+        <p class="prev-next-title">Causal Tracing Intervention</p>
       </div>
     </a>
     <a class="right-next"
-       href="ResidualTools.html"
+       href="KnowledgeGraphExtractor.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Residual Tools</p>
+        <p class="prev-next-title">Knowledge Graph Extractor</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -450,10 +449,10 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-core_arrakis.residual_decomposer">API Reference</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.residual_decomposer.ResidualDecomposer"><code class="docutils literal notranslate"><span class="pre">ResidualDecomposer</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.residual_decomposer.ResidualDecomposer.decompose_residual"><code class="docutils literal notranslate"><span class="pre">ResidualDecomposer.decompose_residual()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.residual_decomposer.ResidualDecomposer.mlp_basis"><code class="docutils literal notranslate"><span class="pre">ResidualDecomposer.mlp_basis()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-core_arrakis.feature_viz">API Reference</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.feature_viz.FeatureViz"><code class="docutils literal notranslate"><span class="pre">FeatureViz</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.feature_viz.FeatureViz.activate_neuron"><code class="docutils literal notranslate"><span class="pre">FeatureViz.activate_neuron()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core_arrakis.feature_viz.FeatureViz.neuron_interpolation"><code class="docutils literal notranslate"><span class="pre">FeatureViz.neuron_interpolation()</span></code></a></li>
 </ul>
 </li>
 </ul>

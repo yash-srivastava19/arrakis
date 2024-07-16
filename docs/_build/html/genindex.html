@@ -153,6 +153,7 @@
 <li class="toctree-l1"><a class="reference internal" href="AttentionHeadComposition.html">Attention Head Composition</a></li>
 <li class="toctree-l1"><a class="reference internal" href="AttentionTools.html">Attention Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="CausalTracingIntervention.html">Causal Tracing Intervention</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FeatureVisualization.html">Feature Visualization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="KnowledgeGraphExtractor.html">Knowledge Graph Extractor</a></li>
 <li class="toctree-l1"><a class="reference internal" href="KnowledgeProber.html">Knowledge Prober</a></li>
 <li class="toctree-l1"><a class="reference internal" href="LogitAttribution.html">Logit Attribution</a></li>
@@ -280,6 +281,7 @@ document.write(`
  | <a href="#K"><strong>K</strong></a>
  | <a href="#L"><strong>L</strong></a>
  | <a href="#M"><strong>M</strong></a>
+ | <a href="#N"><strong>N</strong></a>
  | <a href="#P"><strong>P</strong></a>
  | <a href="#R"><strong>R</strong></a>
  | <a href="#S"><strong>S</strong></a>
@@ -292,12 +294,14 @@ document.write(`
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="AttentionTools.html#core_arrakis.attention_tools.AttentionTools.ablate_head">ablate_head() (core_arrakis.attention_tools.AttentionTools method)</a>, <a href="index.html#core_arrakis.attention_tools.AttentionTools.ablate_head">[1]</a>
 </li>
-      <li><a href="AttentionHeadComposition.html#core_arrakis.attention_head_comp.AttentionComposer.apply_composed_head">apply_composed_head() (core_arrakis.attention_head_comp.AttentionComposer method)</a>, <a href="index.html#core_arrakis.attention_head_comp.AttentionComposer.apply_composed_head">[1]</a>
+      <li><a href="FeatureVisualization.html#core_arrakis.feature_viz.FeatureViz.activate_neuron">activate_neuron() (core_arrakis.feature_viz.FeatureViz method)</a>
 </li>
-      <li><a href="AttentionHeadComposition.html#core_arrakis.attention_head_comp.AttentionComposer.attention_path_patching">attention_path_patching() (core_arrakis.attention_head_comp.AttentionComposer method)</a>, <a href="index.html#core_arrakis.attention_head_comp.AttentionComposer.attention_path_patching">[1]</a>
+      <li><a href="AttentionHeadComposition.html#core_arrakis.attention_head_comp.AttentionComposer.apply_composed_head">apply_composed_head() (core_arrakis.attention_head_comp.AttentionComposer method)</a>, <a href="index.html#core_arrakis.attention_head_comp.AttentionComposer.apply_composed_head">[1]</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="AttentionHeadComposition.html#core_arrakis.attention_head_comp.AttentionComposer.attention_path_patching">attention_path_patching() (core_arrakis.attention_head_comp.AttentionComposer method)</a>, <a href="index.html#core_arrakis.attention_head_comp.AttentionComposer.attention_path_patching">[1]</a>
+</li>
       <li><a href="AttentionTools.html#core_arrakis.attention_tools.AttentionTools.attention_patterns">attention_patterns() (core_arrakis.attention_tools.AttentionTools method)</a>, <a href="index.html#core_arrakis.attention_tools.AttentionTools.attention_patterns">[1]</a>
 </li>
       <li><a href="AttentionHeadComposition.html#core_arrakis.attention_head_comp.AttentionComposer">AttentionComposer (class in core_arrakis.attention_head_comp)</a>, <a href="index.html#core_arrakis.attention_head_comp.AttentionComposer">[1]</a>
@@ -338,6 +342,13 @@ document.write(`
 </li>
       </ul></li>
       <li>
+    core_arrakis.feature_viz
+
+      <ul>
+        <li><a href="FeatureVisualization.html#module-core_arrakis.feature_viz">module</a>
+</li>
+      </ul></li>
+      <li>
     core_arrakis.kg_extractor
 
       <ul>
@@ -351,6 +362,8 @@ document.write(`
         <li><a href="KnowledgeProber.html#module-core_arrakis.knowledge_prober">module</a>, <a href="index.html#module-core_arrakis.knowledge_prober">[1]</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     core_arrakis.logit_attribution
 
@@ -358,8 +371,6 @@ document.write(`
         <li><a href="LogitAttribution.html#module-core_arrakis.logit_attribution">module</a>, <a href="index.html#module-core_arrakis.logit_attribution">[1]</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     core_arrakis.logit_lens
 
@@ -441,6 +452,8 @@ document.write(`
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="FeatureVisualization.html#core_arrakis.feature_viz.FeatureViz">FeatureViz (class in core_arrakis.feature_viz)</a>
+</li>
       <li><a href="SparsityAnalyzer.html#core_arrakis.sparsity_analyzer.SparsityAnalyzer.find_polysemantic_neurons">find_polysemantic_neurons() (core_arrakis.sparsity_analyzer.SparsityAnalyzer method)</a>, <a href="index.html#core_arrakis.sparsity_analyzer.SparsityAnalyzer.find_polysemantic_neurons">[1]</a>
 </li>
   </ul></td>
@@ -531,6 +544,8 @@ document.write(`
 </li>
         <li><a href="CausalTracingIntervention.html#module-core_arrakis.causal_tracing_intervention">core_arrakis.causal_tracing_intervention</a>, <a href="index.html#module-core_arrakis.causal_tracing_intervention">[1]</a>
 </li>
+        <li><a href="FeatureVisualization.html#module-core_arrakis.feature_viz">core_arrakis.feature_viz</a>
+</li>
         <li><a href="KnowledgeGraphExtractor.html#module-core_arrakis.kg_extractor">core_arrakis.kg_extractor</a>, <a href="index.html#module-core_arrakis.kg_extractor">[1]</a>
 </li>
         <li><a href="KnowledgeProber.html#module-core_arrakis.knowledge_prober">core_arrakis.knowledge_prober</a>, <a href="index.html#module-core_arrakis.knowledge_prober">[1]</a>
@@ -552,6 +567,14 @@ document.write(`
         <li><a href="SuperpositionDisentangler.html#module-core_arrakis.superposition_disentangler">core_arrakis.superposition_disentangler</a>, <a href="index.html#module-core_arrakis.superposition_disentangler">[1]</a>
 </li>
       </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="N">N</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="FeatureVisualization.html#core_arrakis.feature_viz.FeatureViz.neuron_interpolation">neuron_interpolation() (core_arrakis.feature_viz.FeatureViz method)</a>
+</li>
   </ul></td>
 </tr></table>
 

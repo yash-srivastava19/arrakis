@@ -18,7 +18,7 @@ Let's understand how to conduct a small experiment in Arrakis. It is easy, repro
 
 ### Step 1: Install the package
 ```python
-pip install arrakis  # TODO: In future.
+pip install arrakis-mi
 ```
 
 ### Step 2: Create HookedAutoModel

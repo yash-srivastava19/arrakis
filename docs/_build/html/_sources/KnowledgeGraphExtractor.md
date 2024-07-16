@@ -21,7 +21,36 @@ The Knowledge Graph Extractor is a sophisticated tool designed for extracting re
 
 ## Example Usage
 
-*This section will provide practical examples and code snippets demonstrating how to utilize the methods listed above. It will illustrate their application in real-world scenarios, helping users to effectively leverage the Knowledge Graph Extractor for their specific needs.*
+```python
+# imports to run this example
+import torch
+from arrakis.src.core_arrakis.activation_cache import *
+from arrakis.src.bench.base_bench import BaseInterpretabilityBench
+
+config = HookedAutoConfig(name="llama") # keep default values for other args
+model = HookedAutoModel(config)
+
+input_ids = torch.randint(0, 50256, (1, 50)) # generate some random tokens(replace with your ids)
+
+# Derive from BaseInterpretabilityBench
+class MIExperiment(BaseInterpretabilityBench):
+   def __init__(self, model, save_dir="experiments"):
+      super().__init__(model, save_dir)
+
+exp = MIExperiment(model) # create an `exp` object.
+
+@exp.use_tools("kg_extractor") # the tool name to be used
+def test_kg_extractor(token_ids, kg_extractor): # # same as tool name, one extra arg is passed.
+   top_subspaces = kg_extractor.extract_relational_subspaces(0)
+   irt = kg_extractor.identify_relation_types(token_ids, top_subspaces)
+   return {
+      "top_subspaces": top_subspaces,
+      "identify_relation_types": irt
+   }
+
+# Driver code, call the function based on whatever arguments you want!
+test_kg_extractor(input_ids) # one such example. Change as needed!
+```
 
 ## Resources
 

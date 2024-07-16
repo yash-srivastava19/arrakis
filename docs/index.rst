@@ -15,6 +15,7 @@ Arrakis's documentation!
    AttentionHeadComposition
    AttentionTools
    CausalTracingIntervention
+   FeatureVisualization
    KnowledgeGraphExtractor
    KnowledgeProber
    LogitAttribution

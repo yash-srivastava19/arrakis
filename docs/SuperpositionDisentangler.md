@@ -25,7 +25,36 @@ Superposition Disentangler is a tool designed for analyzing and disentangling th
 
 ## Example Usage
 
-*This section will provide practical examples and code snippets demonstrating how to utilize the methods listed above. It will illustrate their application in real-world scenarios, helping users to effectively leverage the Superposition Disentangler for their specific needs.
+```python
+# imports to run this example
+import torch
+from arrakis.src.core_arrakis.activation_cache import *
+from arrakis.src.bench.base_bench import BaseInterpretabilityBench
+
+config = HookedAutoConfig(name="llama") # keep default values for other args
+model = HookedAutoModel(config)
+
+input_ids = torch.randint(0, 50256, (1, 50)) # generate some random tokens(replace with your ids)
+
+# Derive from BaseInterpretabilityBench
+class MIExperiment(BaseInterpretabilityBench):
+   def __init__(self, model, save_dir="experiments"):
+      super().__init__(model, save_dir)
+
+exp = MIExperiment(model) # create an `exp` object.
+
+@exp.use_tools("superposition") # the tool name to be used.
+def test_superposition_disentangler(input_ids, layer_idx, superposition): # same as tool name, extra arg is passed.
+   act_covariance = superposition.compute_activation_covariance([input_ids], layer_idx)
+   dis_supoerpos = superposition.disentangle_superposition(act_covariance)
+   return {
+      "act_covariance": act_covariance,
+      "dis_supoerpos": dis_supoerpos
+   }
+
+# Driver code, call the function based on whatever arguments you want!
+test_superposition_disentangler(input_ids, 'layers.0.self_attn.hook_result_post') # one such example. Change as needed!
+```
 
 ## Resources
 

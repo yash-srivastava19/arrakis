@@ -17,6 +17,36 @@ Induction heads, which are a product of attention head composition, play a cruci
 ```
 
 ## Example Usage
+```python
+# imports to run this example
+import torch
+from arrakis.src.core_arrakis.activation_cache import *
+from arrakis.src.bench.base_bench import BaseInterpretabilityBench
+
+config = HookedAutoConfig(name="llama") # keep default values for other args
+model = HookedAutoModel(config)
+
+input_ids = torch.randint(0, 50256, (1, 50)) # generate some random tokens(replace with your ids)
+
+# Derive from BaseInterpretabilityBench
+class MIExperiment(BaseInterpretabilityBench):
+   def __init__(self, model, save_dir="experiments"):
+      super().__init__(model, save_dir)
+
+exp = MIExperiment(model) # create an `exp` object.
+
+@exp.use_tools("composer") # tool name to be used.
+def test_attention_composer(head1, head2, alpha, composer): # same as tool name, one extra arg is passed.
+   hc = composer.head_composition(head1, head2, alpha)
+   app = composer.attention_path_patching(input_ids, head1, head2)
+   return {
+      "head_composition": hc,
+      "attention_path_patching": app
+   }
+
+# Driver code, call the function based on whatever arguments you want!
+test_attention_composer((0, 0), (0, 1), 0.5) # one such example. Change as needed!
+```
 
 ## Resources
 - [A Mathematical Framework for Transformer Circuits](https://transformer-circuits.pub/2021/framework/index.html)

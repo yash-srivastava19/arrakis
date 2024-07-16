@@ -22,7 +22,36 @@ ReadWriteHeads is a tool designed for identifying and analyzing the read and wri
 
 ## Example Usage
 
-*This section will provide practical examples and code snippets demonstrating how to utilize the methods listed above. It will illustrate their application in real-world scenarios, helping users to effectively leverage ReadWriteHeads for their specific needs.*
+```python
+# imports to run this example
+import torch
+from arrakis.src.core_arrakis.activation_cache import *
+from arrakis.src.bench.base_bench import BaseInterpretabilityBench
+
+config = HookedAutoConfig(name="llama") # keep default values for other args
+model = HookedAutoModel(config)
+
+input_ids = torch.randint(0, 50256, (1, 50)) # generate some random tokens(replace with your ids)
+
+# Derive from BaseInterpretabilityBench
+class MIExperiment(BaseInterpretabilityBench):
+   def __init__(self, model, save_dir="experiments"):
+      super().__init__(model, save_dir)
+
+exp = MIExperiment(model) # create an `exp` object.
+
+@exp.use_tools("write_read") # the tool name to be used.
+def test_read_write(src_idx, write_read):
+   write_heads = write_read.identify_write_heads(0)  # Example layer
+   read_heads = write_read.identify_read_heads(1, dim_idx=src_idx)  # Example layer
+   return {
+      "write_heads": write_heads,
+      "read_heads": read_heads
+   }
+
+# Driver code, call the function based on whatever arguments you want!
+test_read_write(0) # one such example. Change as needed!
+```
 
 ## Resources
 
