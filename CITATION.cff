@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If you use Arrakis in your work, please cite it as below."
+authors:
+- family-names: "Yashovardhan"
+  given-names: "Srivastava"
+title: "arrakis"
+version: 1.0.0
+date-released: 2024-07-26
+url: "https://github.com/yash-srivastava19/arrakis"
