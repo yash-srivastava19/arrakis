@@ -102,7 +102,7 @@ class RunTest:
 
                     combinations = self.generate_combinations(multirun_options) # All the combinations of the multirun options.
                     print("==================================================================")
-                    fields = ["numbers_group_1", "numbers_group_2"]
+                    fields = ["numbers_group_1"]
                     print(fields)
                     for field, combination in zip(fields, combinations):
                         print(f"[INFO] ======== Running for: {combination} ========== ")  # Some form of logging, could store in some random file.
