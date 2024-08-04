@@ -177,7 +177,6 @@ if __name__ == "__main__":
         return {
             "k_probe": true_false,
             "polysemantic_score": pscore
-
         }
     
     @exp.use_tools("surgery")

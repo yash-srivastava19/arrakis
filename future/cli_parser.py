@@ -1,6 +1,10 @@
+# Basic things work for legacy CLI, we need to make new thinkgs.
 import argparse
 from arrakis.src.core_arrakis.activation_cache import *
 import torch
+
+def main():
+    print("Hello World")
 
 RED = "\33[91m"
 BLUE = "\33[94m"

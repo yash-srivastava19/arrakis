@@ -17,6 +17,10 @@ numpy = "<2"
 seaborn = "^0.13.2"
 
 
+click = "^8.1.7"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+arrakis-cli = "future.cli_parser:main"
