@@ -10,17 +10,17 @@ model = HookedAutoModel(config)
 input_ids = torch.randint(0, 50256, (1, 10)) # Random input_ids
 
 # Step2: Create an experiment
-class AttentionVisulazierExperiment(BaseInterpretabilityBench):
+class AttentionVisualizerExperiment(BaseInterpretabilityBench):
     def __init__(self, model, save_dir="experiments"):
         super().__init__(model, save_dir)
         self.tools.update({"feature_viz": FeatureViz(model)})
 
 # Step3: Set the plotting library
-exp = AttentionVisulazierExperiment(model)
+exp = AttentionVisualizerExperiment(model)
 exp.set_plotting_lib(MatplotlibWrapper)
 
 
-# Step4: Test the feature_viz(or any tool you want!) tool
+# Step4: Test the feature_viz (or any tool you want!) tool
 @exp.use_tools("feature_viz")
 def test_feature_viz(feature_viz):
     top_k = feature_viz.activate_neuron([input_ids],"layers.1.self_attn.q_proj.hook_result_pre", 0, top_k=10)
