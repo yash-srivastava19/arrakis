@@ -1,21 +1,21 @@
 # Arrakis - A Mechanistic Interpretability Tool
 
-Interpretability is a relatively new field where everyday something new is happening. Mechanistic Interpretbaility is one of the approach to reverse engineer neural networks and understand what is happening inside these black-box models.
+Interpretability is a relatively new field where everyday something new is happening. Mechanistic Interpretability is one approach to reverse engineer neural networks and understand what is happening inside these black-box models.
 
-Mechanistic Interpretability is a really exciting subfield of alignment, and recently, a lot has been happening in this field - especially at Anthropic. To look at the goal of MI at Anthropic, read this [post](https://www.lesswrong.com/posts/CzZ6Fch4JSpwCpu6C/interpretability). The core operation involved in MI is loading a model, looking at it's weights and activations, and doing some operations on them and producing results. 
+Mechanistic Interpretability is a really exciting subfield of alignment, and recently, a lot has been happening in this field - especially at Anthropic. To look at the goal of MI at Anthropic, read this [post](https://www.lesswrong.com/posts/CzZ6Fch4JSpwCpu6C/interpretability). The core operation involved in MI is loading a model, looking at its weights and activations, doing some operations on them, and producing results. 
 
-I made **Arrakis** to deeply understand Transformer based models(maybe in future I will try to be model agnostic). The first thought that should come to mind is *Why not use Transformer Lens? Neel Nanda has already made significant progress in that*. I made Arrakis as I wanted to have a library which can do more than just get the activations - I wanted a more complete library where researchers can do experiments, and track their progress. Think of **Arrakis** as a complete suite to conduct MI experiments, where I try to get the best of both [Transformer Lens](https://transformerlensorg.github.io/TransformerLens/) and [Garcon](https://transformer-circuits.pub/2021/garcon/index.html). More features will be added as I understand how to made this library more useful for the community, and I need feedback for that.
+I made **Arrakis** to deeply understand Transformer-based models (maybe in the future I will try to be model-agnostic). The first thought that should come to mind is *Why not use Transformer Lens? Neel Nanda has already made significant progress in that*. I made Arrakis as I wanted to have a library which can do more than just get the activations - I wanted a more complete library where researchers can do experiments, and track their progress. Think of **Arrakis** as a complete suite to conduct MI experiments, where I try to get the best of both [Transformer Lens](https://transformerlensorg.github.io/TransformerLens/) and [Garcon](https://transformer-circuits.pub/2021/garcon/index.html). More features will be added as I understand how to make this library more useful for the community, and I need feedback for that.
 
 ## Tools and Decomposibility
 
-Regardless of what research project you are working on, if you are not keeping track of things, it gets messy really easily. In a field like MI, where you are constantly looking at all different weights and biases, and there are a lot of moving parts - it gets overwhelming fairly easily. I've experienced this personally, and being someone who is obsessed with reducing experimentation time and get results quickly, I wanted to have a complete suite which makes my workload easy. 
+Regardless of what research project you are working on, if you are not keeping track of things, it gets messy really easily. In a field like MI, where you are constantly looking at all different weights and biases, and there are a lot of moving parts - it gets overwhelming fairly easily. I've experienced this personally, and being someone who is obsessed with reducing experimentation time and getting results quickly, I wanted to have a complete suite which makes my workload easy. 
 
-Arrakis is made so that this doesn't happen. The core principle behind Arrakis is decomposibility. Do all experiments with plug-and-play tools(will be much clear in the walkthrough). This makes experimentation really flexible, and at the same time, Arrakis keeps track of different versions of the experiments by default. Everything in Arrakis is made in this plug and play fashion. I have even incorporated a graphing library(on top of several popular libraries) to make graphing a lot easier.
+Arrakis is made so that this doesn't happen. The core principle behind Arrakis is decomposibility. Do all experiments with plug-and-play tools (will be much clearer in the walkthrough). This makes experimentation really flexible, and at the same time, Arrakis keeps track of different versions of the experiments by default. Everything in Arrakis is made in this plug-and-play fashion. I have even incorporated a graphing library (on top of several popular libraries) to make graphing a lot easier.
 
 I really want feedback and contributions on this project so that this can be adapted by the community at large.
 
 ## Arrakis Walkthrough
-Let's understand how to conduct a small experiment in Arrakis. It is easy, reprodcible and a lot easy to implement.
+Let's understand how to conduct a small experiment in Arrakis. It is easy, reproducible and very easy to implement.
 
 ### Step 1: Install the package
 All the dependencies of the project are maintained through poetry.
@@ -24,7 +24,7 @@ pip install arrakis-mi
 ```
 
 ### Step 2: Create HookedAutoModel
-`HookedAutoModel` offers a convinient way to import models from Huggingface directly(with Hooks). Everything just works out of the box. First, create a HookedConfig for the model you want to support with the required parameters. Then, create a `HookedAutoModel` from the config. As of now, these models are supported : 
+`HookedAutoModel` offers a convenient way to import models from Huggingface directly (with Hooks). Everything just works out of the box. First, create a HookedConfig for the model you want to support with the required parameters. Then, create a `HookedAutoModel` from the config. As of now, these models are supported: 
 
 ```python
 [ 
@@ -40,10 +40,10 @@ pip install arrakis-mi
 ]
 ```
 
-As mentioned, the core idea behind Arrkis is decompsibility, so a `HookedAutoModel` is a wrapper around Huggingface `PreTrainedModel` class, with a single plug and play decorator for the forward pass. All the model probing happens behind the scenes, and is pre-configured.
+As mentioned, the core idea behind Arrakis is decomposibility, so a `HookedAutoModel` is a wrapper around Huggingface `PreTrainedModel` class, with a single plug-and-play decorator for the forward pass. All the model probing happens behind the scenes, and is pre-configured.
 
 ```python
-from arraki.src.core_arrakis.activation_cache import *
+from arrakis.src.core_arrakis.activation_cache import *
 
 config = HookedAutoConfig(name="llama", 
     vocab_size=50256, 
@@ -59,7 +59,7 @@ model = HookedAutoModel(config)
 
 ### Step 3: Set up Interpretability Bench
 
-At it's core, the whole purpose of Arrakis is to conduct MI experiment. After installing, derive from the `BaseInterpretabilityBench` and instantiate an object(`exp` in this case). This object provides a lot of function out-of the box based on the "tool" you want to use for the experiment, and have access to the functions that the tool provides. You can also create your own tool(read about that [here](README.md#extending-arrakis) )
+At its core, the whole purpose of Arrakis is to conduct MI experiments. After installing, derive from the `BaseInterpretabilityBench` and instantiate an object (`exp` in this case). This object provides a lot of functionality out-of the box based on the "tool" you want to use for the experiment, and have access to the functions that the tool provides. You can also create your own tool (read about that [here](README.md#extending-arrakis) )
 
 ```python
 from arrakis.src.core_arrakis.base_bench import BaseInterpretabilityBench
@@ -72,10 +72,10 @@ class MIExperiment(BaseInterpretabilityBench):
 exp = MIExperiment(model)
 ```
 
-Apart from access to MI tools, the object also provies you a convinient way to log your experiments. To log your experiments, just decorate the function you are working with `@exp.log_experiment`, and that is pretty much it. The function creates a local version control on the contents of the function, and stores it locally. You can run many things in parallel, and the version control helps you keep track of it. 
+Apart from access to MI tools, the object also provides you a convenient way to log your experiments. To log your experiments, just decorate the function you are working with `@exp.log_experiment`, and that is pretty much it. The function creates a local version control on the contents of the function and stores it locally. You can run many things in parallel, and the version control helps you keep track of it. 
 
 ```python
-# Step1: Create a function where you can do operations on the model.
+# Step 1: Create a function where you can do operations on the model.
 
 @exp.log_experiment   # This is pretty much it. This will log the experiment.
 def attention_experiment():
@@ -93,11 +93,11 @@ print("This is the version hash of the experiment: ", l)
 print(exp.get_version("attention_experiment", l[0])['source'])  # This gives the content of the experiment.
 
 ```
-Apart from these tools, there are also `@exp.profile_model`(to profile how much resources the model is using) and `@exp.test_hypothesis`(to test hypothesis). Support of more tools will be added as I get more feedback from the community.
+Apart from these tools, there are also `@exp.profile_model` (to profile how much resources the model is using) and `@exp.test_hypothesis` (to test hypotheses). Support of more tools will be added as I get more feedback from the community.
 
-### Step 4: Create you experiments
+### Step 4: Create your experiments
 
-By default, Arrakis provides a lot of Anthropic's interpretability experiments(Monosemanticity, Residual Decomposition, Read Write Analysis and a lot [more]()). These are provided as tools, so in your experiments, you can plug and play with them and conduct your experiments. Here's an example of how you can do that.
+By default, Arrakis provides a lot of Anthropic's interpretability experiments (Monosemanticity, Residual Decomposition, Read Write Analysis and a lot [more](README.md#list-of-tools)). These are provided as tools, so in your experiments, you can plug and play with them and conduct your experiments. Here's an example of how you can do that.
 ```python
 # Making functions for Arrakis to use is pretty easy. Let's look it in action.
 
@@ -123,7 +123,7 @@ print(read_write_analysis(0, 1, 0)) # Perfecto!
 ```
 
 ### Step 5: Visualize the Results
-Generating plots is Arrakis is also plu and play, just add the decorator and plots are generated by default. Read more about the graphing docs [here]() 
+Generating plots is Arrakis is also plug-and-play, just add the decorator and plots are generated by default. Read more about the graphing docs [here]() 
 ```python
 
 from arrakis.src.graph.base_graph import *
@@ -186,7 +186,7 @@ The attribute `model` is a wrapper around Huggingface `PreTrainedModel` with man
 - Step 2: In the derived class from `BaseInterpretabilityBench`, add your custom tool in the following manner.
 
 ```python
-from src.bench.base_bench import BaseInteroretabilityBench
+from src.bench.base_bench import BaseInterpretabilityBench
 # Import the custom tool here.
 
 class ExperimentBench(BaseInterpretabilityBench):
