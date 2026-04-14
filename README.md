@@ -1,10 +1,17 @@
-# Arrakis - A Mechanistic Interpretability Tool
+# Arrakis
 
-Interpretability is a relatively new field where everyday something new is happening. Mechanistic Interpretability is one approach to reverse engineer neural networks and understand what is happening inside these black-box models.
+Arrakis is a toolkit for mechanistic interpretability experiments on transformer models.
 
-Mechanistic Interpretability is a really exciting subfield of alignment, and recently, a lot has been happening in this field - especially at Anthropic. To look at the goal of MI at Anthropic, read this [post](https://www.lesswrong.com/posts/CzZ6Fch4JSpwCpu6C/interpretability). The core operation involved in MI is loading a model, looking at its weights and activations, doing some operations on them, and producing results. 
+## What it is
+Arrakis helps researchers inspect model weights and activations, run interpretability experiments, track experiment versions, and visualize results. It is designed as a more complete research workflow than a thin activation-inspection wrapper.
 
-I made **Arrakis** to deeply understand Transformer-based models (maybe in the future I will try to be model-agnostic). The first thought that should come to mind is *Why not use Transformer Lens? Neel Nanda has already made significant progress in that*. I made Arrakis as I wanted to have a library which can do more than just get the activations - I wanted a more complete library where researchers can do experiments, and track their progress. Think of **Arrakis** as a complete suite to conduct MI experiments, where I try to get the best of both [Transformer Lens](https://transformerlensorg.github.io/TransformerLens/) and [Garcon](https://transformer-circuits.pub/2021/garcon/index.html). More features will be added as I understand how to make this library more useful for the community, and I need feedback for that.
+## Why it matters
+Mechanistic interpretability work gets messy quickly. You are often probing many moving parts at once, comparing variants, and trying to keep experiments reproducible. Arrakis exists to make that workflow more modular, trackable, and easier to extend.
+
+## Current status
+Active research toolkit. Already useful for running and organizing experiments, with more features being added based on practical use and feedback.
+
+I made **Arrakis** to better understand transformer-based models and to build a library that supports more than raw activation access. Think of **Arrakis** as a complete suite for conducting mechanistic interpretability experiments, combining ideas from tools like [Transformer Lens](https://transformerlensorg.github.io/TransformerLens/) and [Garcon](https://transformer-circuits.pub/2021/garcon/index.html).
 
 ## Tools and Decomposibility
 
