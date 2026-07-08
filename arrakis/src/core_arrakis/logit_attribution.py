@@ -12,7 +12,7 @@ class LogitAttributor(BaseInterpretabilityTool):
         """Computes the attribution of the target logit to the input tokens. Returns the attributions."""
         _, cache = self.model(input_ids)
         logits = cache["logits"]
-        target_logit = logits[0, target_idx]
+        target_logit = logits[0, target_idx].max()
         target_logit.requires_grad = True
 
         attributions = {}
@@ -45,10 +45,11 @@ class LogitAttributor(BaseInterpretabilityTool):
         
         _, cache = self.model(input_ids)
         block_type = self.model.model_attrs.get_block_type()
-        
+        attn_type = self.model.model_attrs.get_attn_type()
+
         for i in range(1, n_layers):
             prev_resid = cache[f"{block_type}.{i-1}.hook_resid_post"][0, target_idx]
-            curr_attn = cache[f"{block_type}.{i}.attn.hook_result_post"][0, target_idx]
+            curr_attn = cache[f"{block_type}.{i}.{attn_type}.hook_result_post"][0, target_idx]
             curr_mlp = cache[f"{block_type}.{i}.mlp.hook_result_post"][0, target_idx]
             curr_resid = cache[f"{block_type}.{i}.hook_resid_post"][0, target_idx]
             

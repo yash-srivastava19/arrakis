@@ -1,6 +1,6 @@
-from src.bench.base_bench import BaseInterpretabilityBench
-from src.graph.base_graph import *
-from pre_trained_models_hf import *
+from arrakis.src.bench.base_bench import BaseInterpretabilityBench
+from arrakis.src.graph.base_graph import *
+from arrakis.src.core_arrakis.activation_cache import *
 from argparse import ArgumentParser
 
 if __name__ == "__main__":
