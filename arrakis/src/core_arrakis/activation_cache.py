@@ -10,7 +10,9 @@ import pathlib
 
 #TODO: Can't seem to figure out how there is an empty entry in the activations.
 logger = logging.getLogger(__name__)
-logging.basicConfig(level=logging.DEBUG, filename=pathlib.Path.joinpath(pathlib.Path.cwd(), "logs", "arrakis_model.log"), filemode="w", format="%(asctime)s - %(name)s - %(levelname)s - %(message)s")
+_log_dir = pathlib.Path.joinpath(pathlib.Path.cwd(), "logs")
+_log_dir.mkdir(parents=True, exist_ok=True)
+logging.basicConfig(level=logging.DEBUG, filename=pathlib.Path.joinpath(_log_dir, "arrakis_model.log"), filemode="w", format="%(asctime)s - %(name)s - %(levelname)s - %(message)s")
 
 H_MODELS = ["gpt2", "gpt-neo"]
 

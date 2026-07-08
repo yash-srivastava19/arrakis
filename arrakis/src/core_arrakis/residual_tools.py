@@ -12,10 +12,11 @@ class ResidualTools(BaseInterpretabilityTool):
         """Break down the residual stream to see where info comes from."""
         # See this whether the names are correct or not.
         _, cache = self.model(input_ids)
-        block_type = self.model.model_attrs.get_block_type() 
+        block_type = self.model.model_attrs.get_block_type()
+        attn_type = self.model.model_attrs.get_attn_type()
         residual = cache[f"{block_type}.{layer_idx}.hook_resid_pre"]
-        attn_out = cache[f"{block_type}.{layer_idx}.attn.hook_result"]
-        mlp_out  = cache[f"{block_type}.{layer_idx}.mlp.hook_result"]
+        attn_out = cache[f"{block_type}.{layer_idx}.{attn_type}.hook_result_post"]
+        mlp_out  = cache[f"{block_type}.{layer_idx}.mlp.hook_result_post"]
 
         return {
             "from_prev": residual-attn_out-mlp_out,

@@ -1,7 +1,8 @@
 import json
+import os
 import time
 import torch
-import statistics as stats  # see if this import is there or something else.
+from scipy import stats
 import hashlib
 import inspect
 from datetime import datetime
@@ -27,6 +28,7 @@ class BaseInterpretabilityBench:
     def __init__(self, model, save_dir="experiments"):
         self.model = model
         self.save_dir = save_dir
+        os.makedirs(self.save_dir, exist_ok=True)
         self.tools = {
             "attention": AttentionTools(model), 
             "composer": AttentionComposer(model), 
@@ -151,22 +153,30 @@ class BaseInterpretabilityBench:
                 timings = defaultdict(float)
                 activation_sizes = defaultdict(list)
 
-                def layer_hook(name):
-                    def hook(module, input, output):
-                        t0 = time.time()
-                        yield 
-                        timings[name] += time.time() - t0
-                        activation_sizes[name].append(output.numel() * output.element_size())
+                start_times = {}
+
+                def pre_hook(name):
+                    def hook(module, input):
+                        start_times[name] = time.time()
                     return hook
-                
+
+                def post_hook(name):
+                    def hook(module, input, output):
+                        timings[name] += time.time() - start_times[name]
+                        tensor_output = output[0] if isinstance(output, tuple) else output
+                        activation_sizes[name].append(tensor_output.numel() * tensor_output.element_size())
+                    return hook
+
                 hooks = []
                 for name, module in model.named_modules():
                     if granularity == "layer" and "layers." in name:
-                        hooks.append(module.register_forward_hook(layer_hook(name), prepend=True))
+                        hooks.append(module.register_forward_pre_hook(pre_hook(name)))
+                        hooks.append(module.register_forward_hook(post_hook(name)))
                     elif granularity == "component" and any(x in name for x in ["attention", "mlp", "layer_norm"]):
-                        hooks.append(module.register_forward_hook(layer_hook(name), prepend=True))
+                        hooks.append(module.register_forward_pre_hook(pre_hook(name)))
+                        hooks.append(module.register_forward_hook(post_hook(name)))
 
-                result = func(model, *args[1:], **kwargs)
+                result = func(*args, **kwargs)
 
                 for hook in hooks:
                     hook.remove()

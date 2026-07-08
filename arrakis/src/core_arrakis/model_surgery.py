@@ -1,5 +1,6 @@
 # This, introduced by EleutherAI, is a more robust version of LogitLens.
 from contextlib import contextmanager
+import torch.nn as nn
 from .base_interpret import BaseInterpretabilityTool
 # This is a really hacky class as of now, so test it more, and if it works, then include it.
 class ModelSurgery(BaseInterpretabilityTool):
@@ -53,9 +54,9 @@ class ModelSurgery(BaseInterpretabilityTool):
         # Access layers
         layers = self.model.model_attrs.get_block()
         # Permute the layers based on the given indices
-        permuted_layers = [layers[i] for i in indices]
+        permuted_layers = nn.ModuleList([layers[i] for i in indices])
         # Update the model's layers
-        self.model.model_attrs.set_block(layers)
+        self.model.model_attrs.set_block(permuted_layers)
         try:
             yield self.model
         finally:

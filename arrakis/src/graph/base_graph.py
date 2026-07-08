@@ -116,7 +116,8 @@ class MatplotlibWrapper:
     def plot_neuron_activation_trajectories(self, cache, data_keys, title: str = None, **kwargs) -> plt.Figure:
         activations = cache[data_keys[0]]
         neuron_magnitudes = activations.abs().mean(dim=0)
-        top_k_neurons = torch.topk(neuron_magnitudes, k=5).indices
+        k = min(5, neuron_magnitudes.shape[-1])
+        top_k_neurons = torch.topk(neuron_magnitudes, k=k).indices
 
         fig, ax = plt.subplots()
         for neuron in top_k_neurons:

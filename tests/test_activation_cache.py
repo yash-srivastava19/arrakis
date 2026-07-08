@@ -1,19 +1,27 @@
 import torch
-import torch.nn as  nn
-from src.core_arrakis.activation_cache import register_hooks
+from arrakis.src.core_arrakis.activation_cache import HookedAutoConfig, HookedAutoModel
 
-class SimpleModule(nn.Module):
-    def __init__(self):
-        super().__init__()
-        self.layer1 = nn.Linear(10, 10)
-        self.layer2 = nn.Linear(10, 10)
 
-    @register_hooks    
-    def forward(self, x):
-        x = self.layer1(x)
-        x = self.layer2(x)
-        return x
-    
-sm = SimpleModule()
-input_tensor = torch.randn(1, 10)
-print(sm(input_tensor))
+def make_model():
+    config = HookedAutoConfig(
+        name="llama",
+        vocab_size=50256,
+        hidden_size=8,
+        intermediate_size=2,
+        num_hidden_layers=2,
+        num_attention_heads=4,
+        num_key_value_heads=4,
+    )
+    return HookedAutoModel(config)
+
+
+def test_register_hooks_returns_output_and_activations():
+    model = make_model()
+    input_ids = torch.randint(0, 50256, (1, 10))
+
+    output, activations = model(input_ids)
+
+    assert output is not None
+    assert isinstance(activations, dict)
+    assert "root" in activations
+    assert "layers.0.hook_resid_post" in activations
